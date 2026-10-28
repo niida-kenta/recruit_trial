@@ -257,6 +257,10 @@ const cssConfig: ConfigWithExtends = {
   extends: ['css/recommended', configPrettier],
   rules: {
     'css/no-empty-blocks': 1,
+    // 別ファイルで定義したCSS変数の使用を許可
+    'css/no-invalid-properties': ['error', { allowUnknownVariables: true }],
+    // CSSネスティングを許可
+    'css/use-baseline': ['error', { allowSelectors: ['nesting'] }],
   },
 };
 

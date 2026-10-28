@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from 'astro/types';
 
 import { siteName } from '@root/project.config';
+import { Font } from 'astro:assets';
 
 import { IMG_DIR } from '@/constants/config';
 import '@/styles/global.css';
@@ -32,6 +33,13 @@ const { ...attrs } = Astro.props;
     />
 
     <title>{siteName}</title>
+
+    <!-- markuplint-disable-next-line permitted-contents -->
+    <Font cssVariable="--font-noto-sans-jp" />
+    <!-- markuplint-disable-next-line permitted-contents -->
+    <Font cssVariable="--font-inter" />
+    <!-- markuplint-disable-next-line permitted-contents -->
+    <Font cssVariable="--font-lato" />
   </head>
   <body>
     <slot />

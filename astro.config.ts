@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import { loadEnv } from 'vite';
 
 const { DEV_PORT } = loadEnv(import.meta.env.MODE, process.cwd(), '');
@@ -34,4 +34,23 @@ export default defineConfig({
     inlineStylesheets: 'never',
   },
   vite: viteConfig,
+  // font追加
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Noto Sans JP',
+      cssVariable: '--font-noto-sans-jp',
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Inter',
+      cssVariable: '--font-inter',
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Lato',
+      cssVariable: '--font-lato',
+      weights: [300, 400],
+    },
+  ],
 });

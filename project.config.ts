@@ -13,7 +13,7 @@ export const breakPoints = {
   Huge: 1920,
 };
 
-export const siteName = `リネアワークス中途採用コーディングテスト`;
+export const siteName = `日本ALO音楽研究所`;
 
 export const siteUrl = `https://******.linea.work`;
 
@@ -26,3 +26,5 @@ export const tmpDir = `.tmp`;
 export const assetsDir = `assets`;
 
 export const outDir = `${distDir}${basePath}`;
+
+export const phoneNumber = `0120-00-0000`;

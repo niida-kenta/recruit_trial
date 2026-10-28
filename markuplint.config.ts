@@ -18,7 +18,15 @@ const config: Config = {
     'deprecated-attr': false,
   },
   nodeRules: [],
-  pretenders: [],
+  pretenders: [
+    {
+      // head内 Astro Font component の使用を許可
+      selector: 'Font',
+      as: {
+        element: 'link',
+      },
+    },
+  ],
 };
 
 export default config;
