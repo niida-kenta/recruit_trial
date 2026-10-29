@@ -7,6 +7,7 @@ import aloSp from '@/images/alo-sp.svg';
 import chevronUp from '@/images/chevron-up.svg';
 import graphSp from '@/images/graph-sp.svg';
 import kvPc from '@/images/kv-pc.jpg';
+import kvSp from '@/images/kv-sp.jpg';
 import mailIconSpHeader from '@/images/mail-icon-sp-header.svg';
 import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
 import phoneIconSpHeader from '@/images/phone-icon-sp-header.svg';
@@ -22,28 +23,32 @@ import '@/styles/page.css';
 <Layout>
   <header>
     <h1>{siteName}</h1>
-    <div class="header-right">
-      <!-- <div>
-        <div class="tel">
-          <span class="tel-text">TEL</span>
-          <address class="phone-number">{phoneNumber}</address>
-        </div>
+    <div class="header-actions">
+      <div class="pc-only-wrapper">
+        <div>
+          <div class="tel">
+            <span class="tel-text">TEL</span>
+            <address class="phone-number">{phoneNumber}</address>
+          </div>
           <p class="business-hours">
             <time datetime="10:00">10:00</time>
             ～
             <time datetime="18:00">18:00</time>
             土日・祝日・年末年始除く
           </p>
-      </div> -->
-      <!-- <button class="inquiry">お問い合わせ</button> -->
-      <Image
-        alt="phone icon"
-        src={phoneIconSpHeader}
-      />
-      <Image
-        alt="mail icon"
-        src={mailIconSpHeader}
-      />
+        </div>
+        <button class="inquiry">お問い合わせ</button>
+      </div>
+      <div class="sp-only-wrapper">
+        <Image
+          alt="phone icon"
+          src={phoneIconSpHeader}
+        />
+        <Image
+          alt="mail icon"
+          src={mailIconSpHeader}
+        />
+      </div>
       <button class="menu">
         <span class="menu-text">MENU</span>
         <span
@@ -57,68 +62,53 @@ import '@/styles/page.css';
     </div>
   </header>
 
-  <section id="hero">
-    <Image
-      alt="hero image"
-      densities={[1, 2]}
-      height={375}
-      src={kvPc}
-      width={375}
-    />
-    <div class="alo">
+  <main>
+    <section id="hero">
       <Image
-        alt="ALO graphic svg"
-        src={aloSp}
+        alt="mobile hero image"
+        class="hero-image sp-only"
+        sizes="100vw"
+        src={kvSp}
+        widths={[375, 750]}
       />
-      <div class="text-wrapper text-wrapper--dark_gray">
-        <p class="lead">この文章はダミーです。</p>
-        <p class="deco">ANIMAL LIBERATION ORCHESTRA</p>
-        <p class="text">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
+      <Image
+        alt="pc hero image"
+        class="hero-image pc-only"
+        sizes="1000px"
+        src={kvPc}
+        widths={[1000, 2000]}
+      />
+      <div class="alo">
+        <p class="pc-only site-name">{siteName}</p>
+        <Image
+          alt="ALO graphic svg"
+          class="alo-graphic"
+          src={aloSp}
+        />
+        <div class="text-wrapper text-wrapper--dark_gray">
+          <p class="lead">この文章はダミーです。</p>
+          <p class="deco">ANIMAL LIBERATION ORCHESTRA</p>
+          <p class="text">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="about-intro">
-      <h2>ABOUT</h2>
-      <h3>ABOUT ALO [ ANIMAL LIBERATION ORCHESTRA ]</h3>
-      <div class="text-wrapper text-wrapper--white">
-        <p class="lead">
-          この文章はダミーです。 文字の大きさ、量、字間、 行間等を確認するために 入れています。
-        </p>
-        <p class="text">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
+    <section id="about">
+      <div class="about-intro">
+        <h2>ABOUT</h2>
+        <h3>ABOUT ALO [ ANIMAL LIBERATION ORCHESTRA ]</h3>
+        <div class="text-wrapper text-wrapper--white">
+          <p class="lead">
+            この文章はダミーです。 文字の大きさ、量、字間、 行間等を確認するために 入れています。
+          </p>
+          <p class="text">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="text-wrapper text-wrapper--light_gray">
-      <p class="lead">
-        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-      </p>
-      <p class="text">
-        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-      </p>
-    </div>
-    <div class="stuck">
-      <Image
-        alt="ALO stuck svg"
-        src={stuckSp}
-      />
-      <h2>ALO</h2>
-      <h3>ANIMAL LIBERATION ORCHESTRA</h3>
-    </div>
-    <Image
-      alt="interior image"
-      src={aboutSp}
-    />
-    <div class="graph">
-      <Image
-        alt="graph of number of completions"
-        src={graphSp}
-      />
-      <div class="text-wrapper text-wrapper--white">
+      <div class="text-wrapper text-wrapper--light_gray">
         <p class="lead">
           この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
         </p>
@@ -126,63 +116,90 @@ import '@/styles/page.css';
           この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
         </p>
       </div>
-    </div>
-  </section>
+      <div class="stuck">
+        <Image
+          alt="ALO stuck svg"
+          src={stuckSp}
+        />
+        <h2>ALO</h2>
+        <h3>ANIMAL LIBERATION ORCHESTRA</h3>
+      </div>
+      <Image
+        alt="interior image"
+        src={aboutSp}
+      />
+      <div class="graph">
+        <Image
+          alt="graph of number of completions"
+          src={graphSp}
+        />
+        <div class="text-wrapper text-wrapper--white">
+          <p class="lead">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+          <p class="text">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section id="product">
-    <div class="product-intro">
-      <h2>PRODUCT</h2>
-      <h3>PRODUCT INFORMATION</h3>
-      <div class="text-wrapper text-wrapper--primary">
-        <p class="lead">この文章はダミーです。</p>
-        <p class="text">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
+    <section id="product">
+      <div class="product-intro">
+        <h2>PRODUCT</h2>
+        <h3>PRODUCT INFORMATION</h3>
+        <div class="text-wrapper text-wrapper--primary">
+          <p class="lead">この文章はダミーです。</p>
+          <p class="text">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="product-list">
-      <div class="product-card">
-        <Image
-          alt="product image"
-          src={product1Sp}
-        />
-        <p class="name">ダミーダミーダミー</p>
-        <p class="desc">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
+      <div class="product-list">
+        <div class="product-card">
+          <Image
+            alt="product image"
+            src={product1Sp}
+          />
+          <p class="name">ダミーダミーダミー</p>
+          <p class="desc">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
+        <div class="product-card">
+          <Image
+            alt="product image"
+            src={product2Sp}
+          />
+          <p class="name">ダミーダミーダミー</p>
+          <p class="desc">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
+        <div class="product-card">
+          <Image
+            alt="product image"
+            src={product3Sp}
+          />
+          <p class="name">ダミーダミーダミー</p>
+          <p class="desc">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
+        <div class="product-card">
+          <Image
+            alt="product image"
+            src={product4Sp}
+          />
+          <p class="name">ダミーダミーダミー</p>
+          <p class="desc">
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          </p>
+        </div>
       </div>
-      <div class="product-card">
-        <Image
-          alt="product image"
-          src={product2Sp}
-        />
-        <p class="name">ダミーダミーダミー</p>
-        <p class="desc">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
-      </div>
-      <div class="product-card">
-        <Image
-          alt="product image"
-          src={product3Sp}
-        />
-        <p class="name">ダミーダミーダミー</p>
-        <p class="desc">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
-      </div>
-      <div class="product-card">
-        <Image
-          alt="product image"
-          src={product4Sp}
-        />
-        <p class="name">ダミーダミーダミー</p>
-        <p class="desc">
-          この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
+
   <footer>
     <div class="inquiry">
       <p class="inquiry-text">お電話でのお問い合わせはこちら</p>

@@ -56,49 +56,30 @@
 
 header {
   position: fixed;
+  z-index: 999;
   background-color: var(--white);
   color: var(--black);
   width: 100%;
-  height: 3.75rem;
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 0 1rem;
-  /* padding: 0 0.75rem 0 2.25rem; */
-  .header-right {
+  padding-left: 1rem;
+  .header-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
-    /* .tel {
+    .menu {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       gap: 0.5rem;
-      .tel-text {
-        font-size: 0.8125rem;
-      }
-      .phone-number {
-        font-size: 1.5rem;
-      }
-    }
-    .business-hours {
-      font-size: 0.6875rem;
-    }
-    .inquiry {
-      font-weight: 700;
-      font-size: 0.875rem;
-      border: solid 1px var(--white);
-      width: 12.5rem;
-      height: 3rem;
-      margin-left: 2rem;
-    } */
-    .menu {
-      display: grid;
-      place-items: center;
-      gap: 0.5rem;
       width: 3.75rem;
+      aspect-ratio: 1/1;
       background-color: var(--dark-gray);
       color: var(--white);
-      padding: 1rem 1rem 1.1875rem 1rem;
+      padding: 1rem;
       .menu-text {
         font-size: 0.5625rem;
         line-height: 1;
@@ -120,15 +101,15 @@ header {
 
 #hero {
   background-color: var(--dark-gray);
+  padding-top: var(--header-height);
   .alo {
-    background-color: var(--dark-gray);
     color: var(--white);
     padding: 0 1.25rem 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    img {
+    .alo-graphic {
       margin: -2rem 0 2.25rem;
     }
     p:nth-of-type(1) {
@@ -319,4 +300,89 @@ footer {
       font-size: var(--font-size-sm);
     }
   }
+}
+
+.pc-only-wrapper,
+.pc-only {
+  display: none;
+}
+/* まとめたいがdivとして存在するとstyleが崩れる→contents; */
+.sp-only-wrapper {
+  display: contents;
+}
+
+@media (min-width: 768px) {
+  .sp-only-wrapper,
+  .sp-only {
+    display: none;
+  }
+  .pc-only {
+    display: block;
+  }
+  /* まとめたいがdivとして存在するとstyleが崩れる→contents; */
+  .pc-only-wrapper {
+    display: contents;
+  }
+
+  header {
+    background-color: transparent;
+    color: var(--white);
+    height: 6.25rem;
+    padding: 0 0.75rem 0 2.25rem;
+    .header-actions {
+      .tel {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .tel-text {
+          font-size: 0.8125rem;
+        }
+        .phone-number {
+          font-size: 1.5rem;
+        }
+      }
+      .business-hours {
+        font-size: 0.6875rem;
+      }
+      .inquiry {
+        font-weight: 700;
+        font-size: 0.875rem;
+        border: solid 1px var(--white);
+        width: 12.5rem;
+        height: 3rem;
+        margin-left: 2rem;
+      }
+      .menu {
+        background-color: transparent;
+      }
+    }
+  }
+  #hero {
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    .hero-image {
+      max-width: 1000px;
+    }
+    .alo {
+      background: rgba(from var(--black) r g b / 50%);
+      .site-name {
+        font-family: var(--font-noto-sans-jp);
+        font-weight: 300;
+        font-size: 1.625rem;
+        line-height: 1.25;
+        letter-spacing: 10%;
+        margin-bottom: 4rem;
+      }
+      .alo-graphic {
+        margin-top: 0;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1440px) {
+}
+@media (min-width: 1920px) {
 }

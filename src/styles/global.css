@@ -37,12 +37,13 @@
   --font-size-xl: 24px;
   --font-size-xxl: 32px;
 
+  /* 計算用 */
+  --header-height: 3.75rem;
+  --product-padding-bottom: 8.25rem;
+
   /* before, after装飾 計算用 */
   --padding-lr: 1.25rem;
   --before-width: 1.25rem;
-
-  /* 計算用 */
-  --product-padding-bottom: 8.25rem;
 
   scroll-behavior: smooth;
 }
@@ -52,6 +53,8 @@ body {
   h1 {
     font-family: var(--font-noto-sans-jp);
     font-size: 15px;
+    line-height: 2;
+    letter-spacing: 2.5%;
   }
   h2 {
     color: var(--primary);
@@ -72,5 +75,10 @@ body {
   :root {
     --font-size-xxs: 11px;
     --font-size-xs: 13px;
+  }
+  body {
+    h1 {
+      font-size: 22px;
+    }
   }
 }
