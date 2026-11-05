@@ -2,19 +2,27 @@
 import { phoneNumber, siteName } from '@root/project.config';
 import { Image } from 'astro:assets';
 
-import aboutSp from '@/images/about-sp.jpg';
+import aloPc from '@/images/alo-pc.svg';
 import aloSp from '@/images/alo-sp.svg';
 import chevronUp from '@/images/chevron-up.svg';
+import graphPc from '@/images/graph-pc.svg';
 import graphSp from '@/images/graph-sp.svg';
+import interiorPc from '@/images/interior-pc.jpg';
+import interiorSp from '@/images/interior-sp.jpg';
 import kvPc from '@/images/kv-pc.jpg';
 import kvSp from '@/images/kv-sp.jpg';
 import mailIconSpHeader from '@/images/mail-icon-sp-header.svg';
 import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
 import phoneIconSpHeader from '@/images/phone-icon-sp-header.svg';
+import product1Pc from '@/images/product-1-pc.jpg';
 import product1Sp from '@/images/product-1-sp.jpg';
+import product2Pc from '@/images/product-2-pc.jpg';
 import product2Sp from '@/images/product-2-sp.jpg';
+import product3Pc from '@/images/product-3-pc.jpg';
 import product3Sp from '@/images/product-3-sp.jpg';
+import product4Pc from '@/images/product-4-pc.jpg';
 import product4Sp from '@/images/product-4-sp.jpg';
+import stuckPc from '@/images/stuck-pc.svg';
 import stuckSp from '@/images/stuck-sp.svg';
 import Layout from '@/layouts/Basic/Basic.astro';
 import '@/styles/page.css';
@@ -82,8 +90,13 @@ import '@/styles/page.css';
         <p class="pc-only site-name">{siteName}</p>
         <Image
           alt="ALO graphic svg"
-          class="alo-graphic"
+          class="alo-graphic sp-only"
           src={aloSp}
+        />
+        <Image
+          alt="ALO graphic svg"
+          class="alo-graphic pc-only"
+          src={aloPc}
         />
         <div class="text-wrapper text-wrapper--dark_gray">
           <p class="lead">この文章はダミーです。</p>
@@ -93,6 +106,7 @@ import '@/styles/page.css';
           </p>
         </div>
       </div>
+      <p class="pc-only scroll-down">SCROLL DOWN</p>
     </section>
 
     <section id="about">
@@ -119,22 +133,44 @@ import '@/styles/page.css';
       <div class="stuck">
         <Image
           alt="ALO stuck svg"
+          class="sp-only"
           src={stuckSp}
+        />
+        <Image
+          alt="ALO stuck svg"
+          class="pc-only"
+          src={stuckPc}
         />
         <h2>ALO</h2>
         <h3>ANIMAL LIBERATION ORCHESTRA</h3>
       </div>
       <Image
         alt="interior image"
-        src={aboutSp}
+        class="interior sp-only"
+        sizes="375px"
+        src={interiorSp}
+        widths={[375, 750]}
+      />
+      <Image
+        alt="interior image"
+        class="interior pc-only"
+        sizes="600px"
+        src={interiorPc}
+        widths={[600, 1200]}
       />
       <div class="graph">
         <Image
           alt="graph of number of completions"
+          class="sp-only"
           src={graphSp}
         />
+        <Image
+          alt="graph of number of completions"
+          class="pc-only"
+          src={graphPc}
+        />
         <div class="text-wrapper text-wrapper--white">
-          <p class="lead">
+          <p class="lead lead--graph">
             この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
           </p>
           <p class="text">
@@ -159,7 +195,17 @@ import '@/styles/page.css';
         <div class="product-card">
           <Image
             alt="product image"
+            class="sp-only"
+            sizes="335px"
             src={product1Sp}
+            widths={[335, 570]}
+          />
+          <Image
+            alt="product image"
+            class="pc-only"
+            sizes="570px"
+            src={product1Pc}
+            widths={[570, 1140]}
           />
           <p class="name">ダミーダミーダミー</p>
           <p class="desc">
@@ -169,7 +215,17 @@ import '@/styles/page.css';
         <div class="product-card">
           <Image
             alt="product image"
+            class="sp-only"
+            sizes="335px"
             src={product2Sp}
+            widths={[335, 570]}
+          />
+          <Image
+            alt="product image"
+            class="pc-only"
+            sizes="570px"
+            src={product2Pc}
+            widths={[570, 1140]}
           />
           <p class="name">ダミーダミーダミー</p>
           <p class="desc">
@@ -179,7 +235,17 @@ import '@/styles/page.css';
         <div class="product-card">
           <Image
             alt="product image"
+            class="sp-only"
+            sizes="335px"
             src={product3Sp}
+            widths={[335, 570]}
+          />
+          <Image
+            alt="product image"
+            class="pc-only"
+            sizes="570px"
+            src={product3Pc}
+            widths={[570, 1140]}
           />
           <p class="name">ダミーダミーダミー</p>
           <p class="desc">
@@ -189,7 +255,17 @@ import '@/styles/page.css';
         <div class="product-card">
           <Image
             alt="product image"
+            class="sp-only"
+            sizes="335px"
             src={product4Sp}
+            widths={[335, 570]}
+          />
+          <Image
+            alt="product image"
+            class="pc-only"
+            sizes="570px"
+            src={product4Pc}
+            widths={[570, 1140]}
           />
           <p class="name">ダミーダミーダミー</p>
           <p class="desc">

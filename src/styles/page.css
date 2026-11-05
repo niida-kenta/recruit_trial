@@ -1,55 +1,82 @@
-.text-wrapper {
-  font-family: var(--font-noto-sans-jp);
-  .lead {
-    color: var(--primary);
-    font-size: var(--font-size-xl);
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 2.5%;
-    margin-bottom: 2rem;
-  }
-  .text {
-    color: var(--text);
-    font-size: var(--font-size-md);
-    line-height: 2;
-    letter-spacing: 2.5%;
-  }
-  &.text-wrapper--light_gray {
-    background-color: var(--light-gray);
-    padding: 3.25rem 1.25rem 3.75rem;
-    p:nth-of-type(1) {
-      margin-bottom: 1.25rem;
-    }
-  }
-  &.text-wrapper--primary {
-    .lead,
-    .text {
-      color: var(--white);
-    }
+@layer components {
+  .text-wrapper {
+    font-family: var(--font-noto-sans-jp);
     .lead {
-      font-size: 1.3125rem;
-      margin-bottom: 1.25rem;
+      color: var(--primary);
+      font-size: var(--font-size-xl);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 2.5%;
+      margin-bottom: 2rem;
+    }
+    .text {
+      color: var(--text);
+      font-size: var(--font-size-md);
+      line-height: 2;
+      letter-spacing: 2.5%;
+    }
+    &.text-wrapper--light_gray {
+      background-color: var(--light-gray);
+      padding: 3.25rem 1.25rem 3.75rem;
+      .lead {
+        margin-bottom: 1.25rem;
+      }
+    }
+    &.text-wrapper--primary {
+      .lead,
+      .text {
+        color: var(--white);
+      }
+      .lead {
+        font-size: 1.3125rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+    &.text-wrapper--dark_gray {
+      .lead,
+      .text {
+        color: var(--white);
+      }
+      .lead {
+        font-size: 1.5625rem;
+        line-height: 1;
+        letter-spacing: 14%;
+      }
+      .deco {
+        font-family: var(--font-lato);
+        font-weight: 300;
+        font-size: var(--font-size-xs);
+        line-height: 1;
+        letter-spacing: 21.5%;
+      }
+      .text {
+        font-size: var(--font-size-sm);
+      }
     }
   }
-  &.text-wrapper--dark_gray {
-    .lead,
-    .text {
-      color: var(--white);
+}
+
+@layer app {
+  .pc-only-wrapper,
+  .pc-only {
+    display: none;
+  }
+  /* まとめたいがdivとして存在するとstyleが崩れる→contents; */
+  .sp-only-wrapper {
+    display: contents;
+  }
+
+  @media (min-width: 768px) {
+    .sp-only-wrapper,
+    .sp-only {
+      display: none;
     }
-    .lead {
-      font-size: 1.5625rem;
-      line-height: 1;
-      letter-spacing: 14%;
+    .pc-only {
+      display: block;
     }
-    .deco {
-      font-family: var(--font-lato);
-      font-weight: 300;
-      font-size: var(--font-size-xs);
-      line-height: 1;
-      letter-spacing: 21.5%;
-    }
-    .text {
-      font-size: var(--font-size-sm);
+    /* まとめたいがdivとして存在するとstyleが崩れる→contents; */
+    .pc-only-wrapper {
+      display: contents;
     }
   }
 }
@@ -112,11 +139,13 @@ header {
     .alo-graphic {
       margin: -2rem 0 2.25rem;
     }
-    p:nth-of-type(1) {
-      margin-bottom: 1.25rem;
-    }
-    p:nth-of-type(2) {
-      margin-bottom: 1.75rem;
+    .text-wrapper {
+      .lead {
+        margin-bottom: 1.25rem;
+      }
+      .deco {
+        margin-bottom: 1.75rem;
+      }
     }
   }
 }
@@ -177,8 +206,8 @@ header {
     img {
       margin-bottom: 3.75rem;
     }
-    div {
-      p:nth-of-type(1) {
+    .text-wrapper {
+      .lead--graph {
         margin-bottom: 1.75rem;
       }
     }
@@ -302,28 +331,7 @@ footer {
   }
 }
 
-.pc-only-wrapper,
-.pc-only {
-  display: none;
-}
-/* まとめたいがdivとして存在するとstyleが崩れる→contents; */
-.sp-only-wrapper {
-  display: contents;
-}
-
 @media (min-width: 768px) {
-  .sp-only-wrapper,
-  .sp-only {
-    display: none;
-  }
-  .pc-only {
-    display: block;
-  }
-  /* まとめたいがdivとして存在するとstyleが崩れる→contents; */
-  .pc-only-wrapper {
-    display: contents;
-  }
-
   header {
     background-color: transparent;
     color: var(--white);
@@ -358,14 +366,19 @@ footer {
     }
   }
   #hero {
+    position: relative;
     padding-top: 0;
     display: grid;
-    grid-template-columns: 50vw 50vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     .hero-image {
       max-width: 1000px;
     }
     .alo {
+      width: 100%;
       background: rgba(from var(--black) r g b / 50%);
+      display: grid;
+      align-content: start;
+      padding-top: calc(var(--header-height) + 145.75px);
       .site-name {
         font-family: var(--font-noto-sans-jp);
         font-weight: 300;
@@ -373,9 +386,93 @@ footer {
         line-height: 1.25;
         letter-spacing: 10%;
         margin-bottom: 4rem;
+        height: max-content;
       }
       .alo-graphic {
-        margin-top: 0;
+        margin: 0 0 4rem 0;
+      }
+      .text-wrapper {
+        .lead {
+          font-size: 2.375rem;
+          margin-bottom: 1.25rem;
+        }
+        .deco {
+          font-size: var(--font-size-lg);
+          margin-bottom: 3.75rem;
+        }
+        .text {
+          max-width: 27.5625rem;
+          font-size: var(--font-size-md);
+          font-weight: 700;
+        }
+      }
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 4rem;
+      right: 9.5rem;
+      color: var(--white);
+      font-size: var(--font-size-xxs);
+      font-weight: 300;
+    }
+  }
+  #about {
+    display: grid;
+    grid-template:
+      'intro      stuck' auto
+      'light_gray stuck' auto
+      'graph      graph' auto
+      / 1fr 1fr;
+    .about-intro {
+      grid-area: intro;
+    }
+    .text-wrapper--light_gray {
+      grid-area: light_gray;
+    }
+    .stuck,
+    .interior {
+      grid-area: stuck;
+    }
+    .interior {
+      width: 37.5rem;
+    }
+    .graph {
+      /* もう一つ細分化してgrid templateに入れる方がいいかも */
+      grid-area: graph;
+      display: flex;
+      align-items: center;
+      gap: 7.5rem;
+    }
+  }
+  #product {
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.75rem;
+      padding: 0 var(--padding-lr-pc) 9rem;
+    }
+  }
+  footer {
+    .inquiry {
+      gap: 0;
+      padding: 3.75rem var(--padding-lr-pc);
+      .inquiry-text {
+        border: none;
+        padding: 0;
+        margin-bottom: 1.75rem;
+      }
+    }
+    .tel {
+      margin-bottom: 5rem;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      padding: 3.25rem var(--padding-lr-pc);
+      ul {
+        justify-content: start;
+        padding: 0;
+        border: none;
       }
     }
   }

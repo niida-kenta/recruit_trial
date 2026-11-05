@@ -19,9 +19,8 @@
 @layer app {
 }
 
-/* Figma variable */
-/* h1, textなど各項目ごとにfont size とかも統一されているなら、書いておく */
 :root {
+  /* Figma variable */
   --black: #000000;
   --white: #ffffff;
   --text: #444444;
@@ -36,6 +35,9 @@
   --font-size-lg: 18px;
   --font-size-xl: 24px;
   --font-size-xxl: 32px;
+
+  /* layout 共通 */
+  --padding-lr-pc: 7.5rem;
 
   /* 計算用 */
   --header-height: 3.75rem;
@@ -75,6 +77,8 @@ body {
   :root {
     --font-size-xxs: 11px;
     --font-size-xs: 13px;
+
+    --header-height: 6.25rem;
   }
   body {
     h1 {
