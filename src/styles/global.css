@@ -75,9 +75,6 @@ body {
 
 @media (min-width: 768px) {
   :root {
-    --font-size-xxs: 11px;
-    --font-size-xs: 13px;
-
     --header-height: 6.25rem;
   }
   body {

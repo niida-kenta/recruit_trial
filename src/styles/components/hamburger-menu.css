@@ -1,0 +1,6 @@
+@layer components {
+  .hamburger-menu {
+    background-color: var(--dark-gray);
+    color: var(--white);
+  }
+}

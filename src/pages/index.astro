@@ -2,6 +2,7 @@
 import { phoneNumber, siteName } from '@root/project.config';
 import { Image } from 'astro:assets';
 
+import HamburgerMenu from '@/components/HamburgerMenu.astro';
 import aloPc from '@/images/alo-pc.svg';
 import aloSp from '@/images/alo-sp.svg';
 import chevronUp from '@/images/chevron-up.svg';
@@ -12,6 +13,7 @@ import interiorSp from '@/images/interior-sp.jpg';
 import kvPc from '@/images/kv-pc.jpg';
 import kvSp from '@/images/kv-sp.jpg';
 import mailIconSpHeader from '@/images/mail-icon-sp-header.svg';
+import phoneIconPcFooter from '@/images/phone-icon-pc-footer.svg';
 import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
 import phoneIconSpHeader from '@/images/phone-icon-sp-header.svg';
 import product1Pc from '@/images/product-1-pc.jpg';
@@ -69,6 +71,7 @@ import '@/styles/page.css';
       </button>
     </div>
   </header>
+  <HamburgerMenu />
 
   <main>
     <section id="hero">
@@ -141,8 +144,10 @@ import '@/styles/page.css';
           class="pc-only"
           src={stuckPc}
         />
-        <h2>ALO</h2>
-        <h3>ANIMAL LIBERATION ORCHESTRA</h3>
+        <div class="stuck-text-wrapper">
+          <h2>ALO</h2>
+          <h3>ANIMAL LIBERATION ORCHESTRA</h3>
+        </div>
       </div>
       <Image
         alt="interior image"
@@ -158,23 +163,25 @@ import '@/styles/page.css';
         src={interiorPc}
         widths={[600, 1200]}
       />
-      <div class="graph">
-        <Image
-          alt="graph of number of completions"
-          class="sp-only"
-          src={graphSp}
-        />
-        <Image
-          alt="graph of number of completions"
-          class="pc-only"
-          src={graphPc}
-        />
-        <div class="text-wrapper text-wrapper--white">
+      <div class="completions">
+        <div class="graph">
+          <Image
+            alt="graph of number of completions"
+            class="sp-only"
+            src={graphSp}
+          />
+          <Image
+            alt="graph of number of completions"
+            class="pc-only"
+            src={graphPc}
+          />
+        </div>
+        <div class="text-wrapper text-wrapper--white text-wrapper--graph">
           <p class="lead lead--graph">
             この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
           </p>
           <p class="text">
-            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
           </p>
         </div>
       </div>
@@ -282,7 +289,13 @@ import '@/styles/page.css';
       <div class="tel">
         <Image
           alt="phone icon"
+          class="sp-only"
           src={phoneIconSpFooter}
+        />
+        <Image
+          alt="phone icon"
+          class="pc-only"
+          src={phoneIconPcFooter}
         />
         <div>
           <address class="phone-number">{phoneNumber}</address>
