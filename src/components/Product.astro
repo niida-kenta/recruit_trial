@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+
+import product1Pc from '@/images/product-1-pc.jpg';
+import product1Sp from '@/images/product-1-sp.jpg';
+import product2Pc from '@/images/product-2-pc.jpg';
+import product2Sp from '@/images/product-2-sp.jpg';
+import product3Pc from '@/images/product-3-pc.jpg';
+import product3Sp from '@/images/product-3-sp.jpg';
+import product4Pc from '@/images/product-4-pc.jpg';
+import product4Sp from '@/images/product-4-sp.jpg';
+import '@/styles/components/product.css';
+---
+
+<section id="product">
+  <div class="product-intro">
+    <h2>PRODUCT</h2>
+    <h3>PRODUCT INFORMATION</h3>
+    <div class="text-wrapper text-wrapper--primary">
+      <p class="lead">この文章はダミーです。</p>
+      <p class="text">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+  </div>
+  <div class="product-list">
+    <div class="product-card">
+      <Image
+        alt="product image"
+        class="sp-only"
+        sizes="335px"
+        src={product1Sp}
+        widths={[335, 570]}
+      />
+      <Image
+        alt="product image"
+        class="pc-only"
+        sizes="570px"
+        src={product1Pc}
+        widths={[570, 1140]}
+      />
+      <p class="name">ダミーダミーダミー</p>
+      <p class="desc">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+    <div class="product-card">
+      <Image
+        alt="product image"
+        class="sp-only"
+        sizes="335px"
+        src={product2Sp}
+        widths={[335, 570]}
+      />
+      <Image
+        alt="product image"
+        class="pc-only"
+        sizes="570px"
+        src={product2Pc}
+        widths={[570, 1140]}
+      />
+      <p class="name">ダミーダミーダミー</p>
+      <p class="desc">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+    <div class="product-card">
+      <Image
+        alt="product image"
+        class="sp-only"
+        sizes="335px"
+        src={product3Sp}
+        widths={[335, 570]}
+      />
+      <Image
+        alt="product image"
+        class="pc-only"
+        sizes="570px"
+        src={product3Pc}
+        widths={[570, 1140]}
+      />
+      <p class="name">ダミーダミーダミー</p>
+      <p class="desc">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+    <div class="product-card">
+      <Image
+        alt="product image"
+        class="sp-only"
+        sizes="335px"
+        src={product4Sp}
+        widths={[335, 570]}
+      />
+      <Image
+        alt="product image"
+        class="pc-only"
+        sizes="570px"
+        src={product4Pc}
+        widths={[570, 1140]}
+      />
+      <p class="name">ダミーダミーダミー</p>
+      <p class="desc">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+  </div>
+</section>

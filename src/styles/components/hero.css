@@ -1,0 +1,23 @@
+#hero {
+  background-color: var(--dark-gray);
+  padding-top: var(--header-height);
+  .alo {
+    color: var(--white);
+    padding: 0 1.25rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    .alo-graphic {
+      margin: -2rem 0 2.25rem;
+    }
+    .text-wrapper {
+      .lead {
+        margin-bottom: 1.25rem;
+      }
+      .deco {
+        margin-bottom: 1.75rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+---
+import { siteName } from '@root/project.config';
+import { Image } from 'astro:assets';
+
+import aloPc from '@/images/alo-pc.svg';
+import aloSp from '@/images/alo-sp.svg';
+import kvPc from '@/images/kv-pc.jpg';
+import kvSp from '@/images/kv-sp.jpg';
+import '@/styles/components/hero.css';
+---
+
+<div id="hero">
+  <Image
+    alt="mobile hero image"
+    class="hero-image sp-only"
+    sizes="100vw"
+    src={kvSp}
+    widths={[375, 750]}
+  />
+  <Image
+    alt="pc hero image"
+    class="hero-image pc-only"
+    sizes="1000px"
+    src={kvPc}
+    widths={[1000, 2000]}
+  />
+  <div class="alo">
+    <p class="pc-only site-name">{siteName}</p>
+    <Image
+      alt="ALO graphic svg"
+      class="alo-graphic sp-only"
+      src={aloSp}
+    />
+    <Image
+      alt="ALO graphic svg"
+      class="alo-graphic pc-only"
+      src={aloPc}
+    />
+    <div class="text-wrapper text-wrapper--dark_gray">
+      <p class="lead">この文章はダミーです。</p>
+      <p class="deco">ANIMAL LIBERATION ORCHESTRA</p>
+      <p class="text">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+  </div>
+  <p class="pc-only scroll-down">SCROLL DOWN</p>
+</div>

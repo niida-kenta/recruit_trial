@@ -28,3 +28,9 @@ export const assetsDir = `assets`;
 export const outDir = `${distDir}${basePath}`;
 
 export const phoneNumber = `0120-00-0000`;
+
+export const businessHours = {
+  open: `10:00`,
+  close: `18:00`,
+  note: `土日・祝日・年末年始除く`,
+};

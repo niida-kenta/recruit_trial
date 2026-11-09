@@ -1,0 +1,67 @@
+footer {
+  color: var(--white);
+  .inquiry {
+    background-color: var(--dark-gray);
+    padding: 3.75rem 1.25rem 2.5rem;
+    display: grid;
+    place-items: center;
+    gap: 1.25rem;
+    .inquiry-text {
+      font-family: var(--font-noto-sans-jp);
+      font-weight: 700;
+      line-height: 1.75;
+      letter-spacing: 2.5%;
+      width: 100%;
+      text-align: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgb(from var(--white) r g b / 10%);
+    }
+    .tel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      .contact-info {
+        .phone-number {
+          margin-bottom: 0.25rem;
+          font-size: var(--font-size-xl);
+          font-weight: 300;
+          line-height: 1;
+          letter-spacing: 2%;
+        }
+        .business-hours {
+          font-family: var(--font-noto-sans-jp);
+          font-size: var(--font-size-xxs);
+          line-height: 1;
+          letter-spacing: 2.5%;
+        }
+      }
+    }
+    .link-to-page-top {
+      font-size: var(--font-size-sm);
+      line-height: 2;
+      letter-spacing: 5%;
+      display: grid;
+      place-items: center;
+    }
+  }
+  .navigation {
+    background-color: var(--black);
+    padding: 3.25rem 1.25rem 2.5rem;
+    display: grid;
+    place-items: center;
+    gap: 1.5rem;
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5625rem;
+      width: 100%;
+      padding-bottom: 3.25rem;
+      border-bottom: 1px solid rgb(from var(--white) r g b / 10%);
+    }
+    .copyright {
+      font-size: var(--font-size-sm);
+    }
+  }
+}

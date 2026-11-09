@@ -1,47 +1,69 @@
 ---
-import { phoneNumber, siteName } from '@root/project.config';
+import { siteName } from '@root/project.config';
 import { Image } from 'astro:assets';
 
+import ContactInfo from '@/components/ContactInfo.astro';
+import InquiryButton from '@/components/InquiryButton.astro';
+import mailIcon from '@/images/mail-icon.svg';
 import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
+import '@/styles/components/hamburger-menu.css';
 ---
 
-<dialog class="hamburger-menu">
-  <p>{siteName}</p>
-  <nav>
-    <ul>
-      <li><a href="#about">ALOについて</a></li>
-      <li><a href="#">ALOの強み</a></li>
-      <li><a href="#product">ALOの商品紹介</a></li>
-      <li><a href="#">ご加盟までの流れ</a></li>
-      <li><a href="#">よくあるご質問</a></li>
-    </ul>
-  </nav>
-  <div>
-    <Image
-      alt="phone icon"
-      class="sp-only"
-      src={phoneIconSpFooter}
-    />
-    <p>メールでのお問い合わせ</p>
-    <button>お問い合わせ</button>
+<dialog
+  class="hamburger-menu"
+  data-menu
+>
+  <div class="menu-header">
+    <p class="site-name">{siteName}</p>
+    <button>×</button>
   </div>
-  <div>
-    <p>お電話でのお問い合わせ</p>
-    <div class="tel">
-      <Image
-        alt="phone icon"
-        class="sp-only"
-        src={phoneIconSpFooter}
-      />
-      <div>
-        <address class="phone-number">{phoneNumber}</address>
-        <p class="business-hours">
-          <time datetime="10:00">10:00</time>
-          ～
-          <time datetime="18:00">18:00</time>
-          土日・祝日・年末年始除く
-        </p>
+  <div class="menu-content">
+    <nav class="nav-link">
+      <ul>
+        <li><a href="#about">ALOについて</a></li>
+        <li><a href="#">ALOの強み</a></li>
+        <li><a href="#product">ALOの商品紹介</a></li>
+        <li><a href="#">ご加盟までの流れ</a></li>
+        <li><a href="#">よくあるご質問</a></li>
+      </ul>
+    </nav>
+    <div class="mail-wrapper">
+      <div class="flex-wrapper">
+        <Image
+          alt="mail icon"
+          class="sp-only"
+          src={mailIcon}
+        />
+        <p class="inquiry-label">メールでのお問い合わせ</p>
       </div>
+      <InquiryButton />
+    </div>
+    <div class="tel-wrapper">
+      <div class="flex-wrapper">
+        <Image
+          alt="phone icon"
+          class="sp-only"
+          src={phoneIconSpFooter}
+        />
+        <p class="inquiry-label">お電話でのお問い合わせ</p>
+      </div>
+      <ContactInfo />
     </div>
   </div>
 </dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('[data-menu]');
+
+  for (const el of document.querySelectorAll('[data-menu-open]')) {
+    el.addEventListener('click', () => dialog?.showModal());
+  }
+
+  for (const el of dialog?.querySelectorAll('[data-menu-close], a') ?? []) {
+    el.addEventListener('click', () => dialog?.close());
+  }
+
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+</script>

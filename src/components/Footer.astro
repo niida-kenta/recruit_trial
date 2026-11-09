@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+
+import chevronUp from '@/images/chevron-up.svg';
+import phoneIconPcFooter from '@/images/phone-icon-pc-footer.svg';
+import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
+import '@/styles/components/footer.css';
+
+import ContactInfo from './ContactInfo.astro';
+---
+
+<footer>
+  <div class="inquiry">
+    <p class="inquiry-text">お電話でのお問い合わせはこちら</p>
+    <div class="tel">
+      <Image
+        alt="phone icon"
+        class="sp-only"
+        src={phoneIconSpFooter}
+      />
+      <Image
+        alt="phone icon"
+        class="pc-only"
+        src={phoneIconPcFooter}
+      />
+      <ContactInfo />
+    </div>
+    <a
+      class="link-to-page-top"
+      href="#"
+    >
+      <Image
+        alt="chevron up"
+        src={chevronUp}
+      />
+      <span>PAGE TOP</span>
+    </a>
+  </div>
+  <nav class="navigation">
+    <ul>
+      <li><a href="#">企業案内</a></li>
+      <li><a href="#">企業案内</a></li>
+    </ul>
+    <small class="copyright">&copy;&nbsp;COMPANY</small>
+  </nav>
+</footer>

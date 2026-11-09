@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+
+import graphPc from '@/images/graph-pc.svg';
+import graphSp from '@/images/graph-sp.svg';
+import interiorPc from '@/images/interior-pc.jpg';
+import interiorSp from '@/images/interior-sp.jpg';
+import stuckPc from '@/images/stuck-pc.svg';
+import stuckSp from '@/images/stuck-sp.svg';
+import '@/styles/components/about.css';
+---
+
+<section id="about">
+  <div class="about-intro">
+    <h2>ABOUT</h2>
+    <h3>ABOUT ALO [ ANIMAL LIBERATION ORCHESTRA ]</h3>
+    <div class="text-wrapper text-wrapper--white">
+      <p class="lead">
+        この文章はダミーです。 文字の大きさ、量、字間、 行間等を確認するために 入れています。
+      </p>
+      <p class="text">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+  </div>
+  <div class="text-wrapper text-wrapper--light_gray">
+    <p class="lead">
+      この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+    </p>
+    <p class="text">
+      この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+    </p>
+  </div>
+  <div class="stuck">
+    <Image
+      alt="ALO stuck svg"
+      class="sp-only"
+      src={stuckSp}
+    />
+    <Image
+      alt="ALO stuck svg"
+      class="pc-only"
+      src={stuckPc}
+    />
+    <div class="stuck-text-wrapper">
+      <h2>ALO</h2>
+      <h3>ANIMAL LIBERATION ORCHESTRA</h3>
+    </div>
+  </div>
+  <Image
+    alt="interior image"
+    class="interior sp-only"
+    sizes="375px"
+    src={interiorSp}
+    widths={[375, 750]}
+  />
+  <Image
+    alt="interior image"
+    class="interior pc-only"
+    sizes="600px"
+    src={interiorPc}
+    widths={[600, 1200]}
+  />
+  <div class="completions">
+    <div class="graph">
+      <Image
+        alt="graph of number of completions"
+        class="sp-only"
+        src={graphSp}
+      />
+      <Image
+        alt="graph of number of completions"
+        class="pc-only"
+        src={graphPc}
+      />
+    </div>
+    <div class="text-wrapper text-wrapper--white text-wrapper--graph">
+      <p class="lead lead--graph">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+      <p class="text">
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+  </div>
+</section>

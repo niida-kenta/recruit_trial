@@ -1,0 +1,8 @@
+.inquiry-button {
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: 1px solid var(--white);
+  width: 12.5rem;
+  height: 3rem;
+  margin-left: 2rem;
+}

@@ -1,0 +1,13 @@
+---
+import { businessHours, phoneNumber } from '@root/project.config';
+---
+
+<div class="contact-info">
+  <address class="phone-number">{phoneNumber}</address>
+  <p class="business-hours">
+    <time datetime={businessHours.open}>{businessHours.open}</time>
+    ～
+    <time datetime={businessHours.close}>{businessHours.close}</time>
+    &nbsp;{businessHours.note}
+  </p>
+</div>

@@ -1,0 +1,53 @@
+---
+import { businessHours, phoneNumber, siteName } from '@root/project.config';
+import { Image } from 'astro:assets';
+
+import InquiryButton from '@/components/InquiryButton.astro';
+import mailIconSpHeader from '@/images/mail-icon-sp-header.svg';
+import phoneIconSpHeader from '@/images/phone-icon-sp-header.svg';
+import '@/styles/components/header.css';
+---
+
+<header>
+  <h1>{siteName}</h1>
+  <div class="header-actions">
+    <div class="pc-only-wrapper">
+      <div class="contact-info">
+        <div class="tel">
+          <span class="tel-text">TEL</span>
+          <address class="phone-number">{phoneNumber}</address>
+        </div>
+        <p class="business-hours">
+          <time datetime={businessHours.open}>{businessHours.open}</time>
+          ～
+          <time datetime={businessHours.close}>{businessHours.close}</time>
+          &nbsp;{businessHours.note}
+        </p>
+      </div>
+      <InquiryButton />
+    </div>
+    <div class="sp-only-wrapper">
+      <Image
+        alt="phone icon"
+        src={phoneIconSpHeader}
+      />
+      <Image
+        alt="mail icon"
+        src={mailIconSpHeader}
+      />
+    </div>
+    <button
+      class="menu"
+      data-menu-open
+    >
+      <span class="menu-text">MENU</span>
+      <span
+        aria-hidden="true"
+        class="menu-lines"
+      >
+        <span class="line"></span>
+        <span class="line"></span>
+      </span>
+    </button>
+  </div>
+</header>
