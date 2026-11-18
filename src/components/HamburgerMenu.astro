@@ -4,8 +4,8 @@ import { Image } from 'astro:assets';
 
 import ContactInfo from '@/components/ContactInfo.astro';
 import InquiryButton from '@/components/InquiryButton.astro';
-import mailIcon from '@/images/mail-icon.svg';
-import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
+import mailIconCircle52 from '@/images/mail-icon-circle-52.svg';
+import phoneIconCircle60 from '@/images/phone-icon-circle-60.svg';
 import '@/styles/components/hamburger-menu.css';
 ---
 
@@ -13,41 +13,41 @@ import '@/styles/components/hamburger-menu.css';
   class="hamburger-menu"
   data-menu
 >
-  <div class="menu-header">
-    <p class="site-name">{siteName}</p>
-    <button>×</button>
-  </div>
-  <div class="menu-content">
-    <nav class="nav-link">
-      <ul>
-        <li><a href="#about">ALOについて</a></li>
-        <li><a href="#">ALOの強み</a></li>
-        <li><a href="#product">ALOの商品紹介</a></li>
-        <li><a href="#">ご加盟までの流れ</a></li>
-        <li><a href="#">よくあるご質問</a></li>
-      </ul>
-    </nav>
-    <div class="mail-wrapper">
-      <div class="flex-wrapper">
-        <Image
-          alt="mail icon"
-          class="sp-only"
-          src={mailIcon}
-        />
-        <p class="inquiry-label">メールでのお問い合わせ</p>
-      </div>
-      <InquiryButton />
+  <div class="menu-wrapper">
+    <div class="menu-header">
+      <p class="site-name">{siteName}</p>
+      <button data-menu-close>×</button>
     </div>
-    <div class="tel-wrapper">
-      <div class="flex-wrapper">
-        <Image
-          alt="phone icon"
-          class="sp-only"
-          src={phoneIconSpFooter}
-        />
-        <p class="inquiry-label">お電話でのお問い合わせ</p>
+    <div class="menu-content">
+      <nav class="nav-link">
+        <ul>
+          <li><a href="#about">ALOについて</a></li>
+          <li><a href="#">ALOの強み</a></li>
+          <li><a href="#product">ALOの商品紹介</a></li>
+          <li><a href="#">ご加盟までの流れ</a></li>
+          <li><a href="#">よくあるご質問</a></li>
+        </ul>
+      </nav>
+      <div class="mail-wrapper">
+        <div class="flex-wrapper">
+          <Image
+            alt="mail icon"
+            src={mailIconCircle52}
+          />
+          <p class="inquiry-label">メールでのお問い合わせ</p>
+        </div>
+        <InquiryButton />
       </div>
-      <ContactInfo />
+      <div class="tel-wrapper">
+        <div class="flex-wrapper">
+          <Image
+            alt="phone icon"
+            src={phoneIconCircle60}
+          />
+          <p class="inquiry-label">お電話でのお問い合わせ</p>
+        </div>
+        <ContactInfo />
+      </div>
     </div>
   </div>
 </dialog>
@@ -62,7 +62,7 @@ import '@/styles/components/hamburger-menu.css';
   for (const el of dialog?.querySelectorAll('[data-menu-close], a') ?? []) {
     el.addEventListener('click', () => dialog?.close());
   }
-
+  // dialog自体を触ったときclose
   dialog?.addEventListener('click', (e) => {
     if (e.target === dialog) dialog.close();
   });

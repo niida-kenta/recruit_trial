@@ -2,8 +2,7 @@
 import { Image } from 'astro:assets';
 
 import chevronUp from '@/images/chevron-up.svg';
-import phoneIconPcFooter from '@/images/phone-icon-pc-footer.svg';
-import phoneIconSpFooter from '@/images/phone-icon-sp-footer.svg';
+import phoneIconCircle60 from '@/images/phone-icon-circle-60.svg';
 import '@/styles/components/footer.css';
 
 import ContactInfo from './ContactInfo.astro';
@@ -15,13 +14,7 @@ import ContactInfo from './ContactInfo.astro';
     <div class="tel">
       <Image
         alt="phone icon"
-        class="sp-only"
-        src={phoneIconSpFooter}
-      />
-      <Image
-        alt="phone icon"
-        class="pc-only"
-        src={phoneIconPcFooter}
+        src={phoneIconCircle60}
       />
       <ContactInfo />
     </div>

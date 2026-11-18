@@ -3,8 +3,8 @@ import { businessHours, phoneNumber, siteName } from '@root/project.config';
 import { Image } from 'astro:assets';
 
 import InquiryButton from '@/components/InquiryButton.astro';
-import mailIconSpHeader from '@/images/mail-icon-sp-header.svg';
-import phoneIconSpHeader from '@/images/phone-icon-sp-header.svg';
+import mailIcon24 from '@/images/mail-icon-24.svg';
+import phoneIcon24 from '@/images/phone-icon-24.svg';
 import '@/styles/components/header.css';
 ---
 
@@ -29,11 +29,11 @@ import '@/styles/components/header.css';
     <div class="sp-only-wrapper">
       <Image
         alt="phone icon"
-        src={phoneIconSpHeader}
+        src={phoneIcon24}
       />
       <Image
         alt="mail icon"
-        src={mailIconSpHeader}
+        src={mailIcon24}
       />
     </div>
     <button

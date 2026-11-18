@@ -65,3 +65,15 @@ footer {
     }
   }
 }
+
+@media (min-width: 768px) {
+  footer {
+    .inquiry {
+      .tel {
+        img {
+          width: 52px;
+        }
+      }
+    }
+  }
+}
