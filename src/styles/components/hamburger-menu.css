@@ -1,3 +1,5 @@
+@reference "@/styles/global.css";
+
 .hamburger-menu {
   min-width: 100%;
   min-height: 100vh;
@@ -14,6 +16,28 @@
       font-size: 0.9375rem;
       line-height: 2;
       letter-spacing: 2.5%;
+    }
+    .close-button {
+      position: relative;
+      width: 3.75rem;
+      height: 3.75rem;
+      margin-right: -1.25rem;
+      .menu-lines {
+        .line {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          width: 1.5rem;
+          height: 1px;
+          background-color: var(--white);
+          &:first-child {
+            transform: rotate(45deg);
+          }
+          &:last-child {
+            transform: rotate(-45deg);
+          }
+        }
+      }
     }
   }
   .menu-content {
@@ -76,6 +100,8 @@
         }
         .business-hours {
           font-size: var(--font-size-xs);
+          line-height: 1;
+          letter-spacing: 2.5%;
           text-align: center;
         }
       }
@@ -83,13 +109,14 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: theme(--breakpoint-md)) {
   .hamburger-menu {
+    width: 60rem;
+    display: grid;
+    place-items: center;
     padding: 7.5rem;
-    .menu-wrapper {
-      width: 60rem;
-    }
     .menu-header {
+      margin-bottom: 2.5rem;
       .site-name {
         width: 100%;
         font-weight: 300;
@@ -99,20 +126,72 @@
         padding-bottom: 2.5rem;
         border-bottom: 1px solid var(--white);
       }
+      .close-button {
+        margin-right: 0;
+        position: absolute;
+        /* figmaだとHamburger Menu PCのデザインでtopに10pxついているが、そうするとSPのデザインとハンバーガーの位置に違いが出るのでおかしい */
+        /* top: 0.625rem; */
+        top: 0;
+        right: 0.75rem;
+        width: 6.25rem;
+        height: 6.25rem;
+        .menu-lines {
+          .line {
+            width: 2rem;
+            height: 1px;
+          }
+        }
+      }
     }
     .menu-content {
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'inquiry-mail nav-link'
+        'inquiry-tel nav-link';
+      .nav-link {
+        grid-area: nav-link;
+        padding: 3rem 6.25rem;
+        border-left: 1px solid rgb(from var(--white) r g b / 10%);
+        font-size: var(--font-size-lg);
+      }
       .mail-wrapper {
+        grid-area: inquiry-mail;
+        height: fit-content;
+        border: none;
+        padding: 3rem 6.25rem 0 0;
+        gap: 2rem;
+        align-items: start;
         .flex-wrapper {
+          gap: 2.25rem;
           img {
             width: 52px;
           }
         }
+        .inquiry-button {
+          width: 18.25rem;
+          margin-left: calc(52px + 2.25rem); /* img size + gap */
+        }
       }
       .tel-wrapper {
+        grid-area: inquiry-tel;
+        height: fit-content;
+        border: none;
+        padding: 0 6.25rem 3rem 0;
+        gap: 1.25rem;
+        align-items: start;
         .flex-wrapper {
+          gap: 2.25rem;
           img {
-            /* svgはremではなくpxに統一 */
-            width: 52px;
+            width: 52px; /* svgはremではなくpxに統一 */
+          }
+        }
+        .contact-info {
+          margin-left: calc(52px + 2.25rem); /* img size + gap */
+          .business-hours {
+            font-size: 0.8125rem;
+            text-align: start;
           }
         }
       }

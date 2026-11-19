@@ -1,3 +1,5 @@
+@reference "@/styles/global.css";
+
 @layer components {
   .text-wrapper {
     font-family: var(--font-noto-sans-jp);
@@ -66,7 +68,7 @@
     display: contents;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: theme(--breakpoint-md)) {
     .sp-only-wrapper,
     .sp-only {
       display: none;
@@ -81,7 +83,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: theme(--breakpoint-md)) {
   header {
     background-color: transparent;
     color: var(--white);
@@ -292,9 +294,9 @@
     }
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: theme(--breakpoint-lg)) {
 }
-@media (min-width: 1440px) {
+@media (min-width: theme(--breakpoint-2xl)) {
 }
-@media (min-width: 1920px) {
+@media (min-width: theme(--breakpoint-3xl)) {
 }

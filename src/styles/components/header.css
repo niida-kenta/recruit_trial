@@ -1,3 +1,5 @@
+@reference "@/styles/global.css";
+
 header {
   position: fixed;
   z-index: 999;
@@ -37,6 +39,23 @@ header {
         .line {
           height: 1px;
           background-color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-md)) {
+  header {
+    .header-actions {
+      .menu {
+        width: 6.25rem;
+        padding: 0;
+        .menu-text {
+          font-size: 0.6875rem;
+        }
+        .menu-lines {
+          width: 2rem;
         }
       }
     }

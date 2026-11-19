@@ -16,7 +16,19 @@ import '@/styles/components/hamburger-menu.css';
   <div class="menu-wrapper">
     <div class="menu-header">
       <p class="site-name">{siteName}</p>
-      <button data-menu-close>×</button>
+      <button
+        aria-label="メニューを閉じる"
+        class="close-button"
+        data-menu-close
+      >
+        <span
+          aria-hidden="true"
+          class="menu-lines"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
     </div>
     <div class="menu-content">
       <nav class="nav-link">
@@ -54,8 +66,9 @@ import '@/styles/components/hamburger-menu.css';
 
 <script>
   const dialog = document.querySelector<HTMLDialogElement>('[data-menu]');
+  const menuOpenButtons = document.querySelectorAll('[data-menu-open]');
 
-  for (const el of document.querySelectorAll('[data-menu-open]')) {
+  for (const el of menuOpenButtons) {
     el.addEventListener('click', () => dialog?.showModal());
   }
 
@@ -63,7 +76,7 @@ import '@/styles/components/hamburger-menu.css';
     el.addEventListener('click', () => dialog?.close());
   }
   // dialog自体を触ったときclose
-  dialog?.addEventListener('click', (e) => {
-    if (e.target === dialog) dialog.close();
-  });
+  // dialog?.addEventListener('click', (e) => {
+  //   if (e.target === dialog) dialog.close();
+  // });
 </script>

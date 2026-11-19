@@ -1,3 +1,5 @@
+@reference "@/styles/global.css";
+
 footer {
   color: var(--white);
   .inquiry {
@@ -22,6 +24,9 @@ footer {
       align-items: center;
       gap: 1rem;
       margin-bottom: 2.5rem;
+      img {
+        width: 52px;
+      }
       .contact-info {
         .phone-number {
           margin-bottom: 0.25rem;
@@ -66,12 +71,12 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: theme(--breakpoint-md)) {
   footer {
     .inquiry {
       .tel {
         img {
-          width: 52px;
+          width: auto;
         }
       }
     }

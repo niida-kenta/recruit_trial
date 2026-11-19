@@ -19,6 +19,13 @@
 @layer app {
 }
 
+/* tailwindのresetはfont-styleを消していないようなので、全要素に指定 */
+*,
+*::before,
+*::after {
+  font-style: normal;
+}
+
 :root {
   /* Figma variable */
   --black: #000000;
@@ -71,9 +78,12 @@ body {
     line-height: 2;
     letter-spacing: 10%;
   }
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: theme(--breakpoint-md)) {
   :root {
     --header-height: 6.25rem;
   }
