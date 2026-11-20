@@ -55,6 +55,7 @@
   --before-width: 1.25rem;
 
   scroll-behavior: smooth;
+  /* scrollbar-gutter: stable; */
 }
 
 body {
@@ -83,7 +84,7 @@ body {
   }
 }
 
-@media (min-width: theme(--breakpoint-md)) {
+@media (min-width: theme(--breakpoint-2xl)) {
   :root {
     --header-height: 6.25rem;
   }

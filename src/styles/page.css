@@ -83,7 +83,7 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-md)) {
+@media (min-width: theme(--breakpoint-2xl)) {
   header {
     background-color: transparent;
     color: var(--white);

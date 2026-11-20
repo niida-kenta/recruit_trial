@@ -51,6 +51,8 @@
   }
   .completions {
     padding: 3rem 1.25rem 4.5rem;
+    display: grid;
+    place-items: center;
     .graph {
       img {
         margin-bottom: 3.75rem;

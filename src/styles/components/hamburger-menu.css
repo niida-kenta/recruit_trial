@@ -109,12 +109,14 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-md)) {
+@media (min-width: theme(--breakpoint-2xl)) {
   .hamburger-menu {
     width: 60rem;
-    display: grid;
-    place-items: center;
     padding: 7.5rem;
+    &[open] {
+      display: grid;
+      place-items: center;
+    }
     .menu-header {
       margin-bottom: 2.5rem;
       .site-name {
@@ -133,6 +135,8 @@
         /* top: 0.625rem; */
         top: 0;
         right: 0.75rem;
+        /* responsiveで見るとズレないが、scrollbar(15px)込みで見るとずれる */
+        /* right: calc(0.75rem + 15px); */
         width: 6.25rem;
         height: 6.25rem;
         .menu-lines {

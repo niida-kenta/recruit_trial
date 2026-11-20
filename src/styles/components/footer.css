@@ -71,7 +71,7 @@ footer {
   }
 }
 
-@media (min-width: theme(--breakpoint-md)) {
+@media (min-width: theme(--breakpoint-2xl)) {
   footer {
     .inquiry {
       .tel {

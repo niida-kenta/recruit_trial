@@ -2,7 +2,7 @@
 
 header {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   background-color: var(--white);
   color: var(--black);
   width: 100%;
@@ -45,7 +45,7 @@ header {
   }
 }
 
-@media (min-width: theme(--breakpoint-md)) {
+@media (min-width: theme(--breakpoint-2xl)) {
   header {
     .header-actions {
       .menu {
