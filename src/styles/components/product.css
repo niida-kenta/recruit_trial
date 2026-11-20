@@ -1,3 +1,5 @@
+@reference "@/styles/global.css";
+
 #product {
   .product-intro {
     background-color: var(--primary);
@@ -45,6 +47,36 @@
         line-height: 2;
         letter-spacing: 2.5%;
       }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  #product {
+    .product-intro {
+      padding: 8.5rem 7.5rem 17rem;
+      h2 {
+        font-size: 3.75rem;
+        margin-bottom: 0.75rem;
+      }
+      h3 {
+        &::before {
+          left: calc(-1 * (var(--before-width) + 1.25rem));
+        }
+      }
+      .text-wrapper.text-wrapper--primary {
+        .lead {
+          font-size: var(--font-size-xl);
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.75rem;
+      padding: 0 var(--padding-lr-pc) 9rem;
+      margin-top: -11.875rem;
     }
   }
 }

@@ -109,7 +109,7 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-2xl)) {
+@media (min-width: theme(--breakpoint-lg)) {
   .hamburger-menu {
     width: 60rem;
     padding: 7.5rem;

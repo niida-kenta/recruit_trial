@@ -45,10 +45,29 @@ header {
   }
 }
 
-@media (min-width: theme(--breakpoint-2xl)) {
+@media (min-width: theme(--breakpoint-lg)) {
   header {
+    background-color: transparent;
+    color: var(--white);
+    height: 6.25rem;
+    padding: 0 0.75rem 0 2.25rem;
     .header-actions {
+      .tel {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .tel-text {
+          font-size: 0.8125rem;
+        }
+        .phone-number {
+          font-size: 1.5rem;
+        }
+      }
+      .business-hours {
+        font-size: 0.6875rem;
+      }
       .menu {
+        background-color: transparent;
         width: 6.25rem;
         padding: 0;
         .menu-text {

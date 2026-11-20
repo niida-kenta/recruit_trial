@@ -71,13 +71,38 @@ footer {
   }
 }
 
-@media (min-width: theme(--breakpoint-2xl)) {
+@media (min-width: theme(--breakpoint-lg)) {
   footer {
     .inquiry {
+      gap: 0;
+      padding: 3.75rem var(--padding-lr-pc);
+      .inquiry-text {
+        border: none;
+        padding: 0;
+        margin-bottom: 1.75rem;
+      }
       .tel {
+        gap: 1.5rem;
+        margin-bottom: 5rem;
         img {
           width: auto;
         }
+        .phone-number {
+          font-size: 2.25rem;
+        }
+        .business-hours {
+          font-size: 0.8125rem;
+        }
+      }
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      padding: 3.25rem var(--padding-lr-pc);
+      ul {
+        justify-content: start;
+        padding: 0;
+        border: none;
       }
     }
   }

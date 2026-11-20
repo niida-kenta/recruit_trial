@@ -1,0 +1,59 @@
+@reference "@/styles/global.css";
+
+@layer components {
+  .text-wrapper {
+    font-family: var(--font-noto-sans-jp);
+    .lead {
+      color: var(--primary);
+      font-size: var(--font-size-xl);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 2.5%;
+      margin-bottom: 2rem;
+    }
+    .text {
+      color: var(--text);
+      font-size: var(--font-size-md);
+      line-height: 2;
+      letter-spacing: 2.5%;
+    }
+    &.text-wrapper--light_gray {
+      background-color: var(--light-gray);
+      padding: 3.25rem 1.25rem 3.75rem;
+      .lead {
+        margin-bottom: 1.25rem;
+      }
+    }
+    &.text-wrapper--primary {
+      .lead,
+      .text {
+        color: var(--white);
+      }
+      .lead {
+        font-size: 1.3125rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+    &.text-wrapper--dark_gray {
+      .lead,
+      .text {
+        color: var(--white);
+      }
+      .lead {
+        font-size: 1.5625rem;
+        line-height: 1;
+        letter-spacing: 14%;
+      }
+      .deco {
+        font-family: var(--font-lato);
+        font-weight: 300;
+        font-size: var(--font-size-xs);
+        line-height: 1;
+        letter-spacing: 21.5%;
+      }
+      .text {
+        font-size: var(--font-size-sm);
+      }
+    }
+  }
+}

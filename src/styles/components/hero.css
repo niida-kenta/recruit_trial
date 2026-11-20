@@ -1,6 +1,11 @@
+@reference "@/styles/global.css";
+
 #hero {
   background-color: var(--dark-gray);
   padding-top: var(--header-height);
+  .hero-image {
+    width: 1000px;
+  }
   .alo {
     color: var(--white);
     padding: 0 1.25rem 6rem;
@@ -18,6 +23,60 @@
       .deco {
         margin-bottom: 1.75rem;
       }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  #hero {
+    position: relative;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .hero-image {
+      max-width: 1000px;
+    }
+    .alo {
+      width: 100%;
+      background: rgba(from var(--black) r g b / 50%);
+      display: grid;
+      align-content: start;
+      padding-top: calc(var(--header-height) + 145.75px);
+      .site-name {
+        font-family: var(--font-noto-sans-jp);
+        font-weight: 300;
+        font-size: 1.625rem;
+        line-height: 1.25;
+        letter-spacing: 10%;
+        margin-bottom: 4rem;
+        height: max-content;
+      }
+      .alo-graphic {
+        margin: 0 0 4rem 0;
+      }
+      .text-wrapper {
+        .lead {
+          font-size: 2.375rem;
+          margin-bottom: 1.25rem;
+        }
+        .deco {
+          font-size: var(--font-size-lg);
+          margin-bottom: 3.75rem;
+        }
+        .text {
+          max-width: 27.5625rem;
+          font-size: var(--font-size-md);
+          font-weight: 700;
+        }
+      }
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 4rem;
+      right: 9.5rem;
+      color: var(--white);
+      font-size: 0.6875rem;
+      font-weight: 300;
     }
   }
 }
