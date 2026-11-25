@@ -1,4 +1,0 @@
-// figmaのpxをdesign-scaleに合わせて拡大縮して返す
-@function dpx($n) {
-  @return calc(var(--design-scale) * #{$n});
-}

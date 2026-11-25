@@ -71,7 +71,7 @@ footer {
   }
 }
 
-@media (min-width: theme(--breakpoint-lg)) {
+@media (min-width: theme(--breakpoint-md)) {
   footer {
     .inquiry {
       gap: 0;

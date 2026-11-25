@@ -6,11 +6,11 @@
 
 @theme {
   --breakpoint-sm: 480px; /* sp */
-  --breakpoint-md: 768px; /* sp(ipadmini) <  */
-  --breakpoint-lg: 1024px; /* pc(ipadproくらい) <  */
-  --breakpoint-xl: 1280px; /* pc < */
-  --breakpoint-2xl: 1440px; /* < pc */
-  --breakpoint-3xl: 1920px; /* < pc */
+  --breakpoint-md: 768px; /* pc(iPad mini 縦)  */
+  --breakpoint-lg: 1024px; /* pc(iPad mini 横, iPad Pro 縦 1032) */
+  --breakpoint-xl: 1280px; /* pc */
+  --breakpoint-2xl: 1440px; /* pc */
+  --breakpoint-3xl: 1920px; /* pc */
 }
 
 @layer base {
@@ -30,7 +30,6 @@
     --light-gray: #f5f5f5;
     --dark-gray: #222222;
 
-    --design-scale: 1px;
     --font-size-xxs: 10px;
     --font-size-xs: 12px;
     --font-size-sm: 14px;
@@ -38,25 +37,11 @@
     --font-size-lg: 18px;
     --font-size-xl: 24px;
     --font-size-xxl: 32px;
-    /* --font-size-xxs: max(10px, calc(var(--design-scale) * 10));
-    --font-size-xs: max(11px, calc(var(--design-scale) * 12));
-    --font-size-sm: max(12px, calc(var(--design-scale) * 14));
-    --font-size-md: calc(var(--design-scale) * 16);
-    --font-size-lg: calc(var(--design-scale) * 18);
-    --font-size-xl: calc(var(--design-scale) * 24);
-    --font-size-xxl: calc(var(--design-scale) * 32); */
-
-    @media (min-width: 1024px) {
-      --design-scale: calc(clamp(1024px, 100vw, 1920px) / 1440);
-    }
 
     /* layout 共通 */
     --padding-lr-pc: 7.5rem;
-    /* tablet用独自 */
-    --padding-tb-lg: 5rem;
-    --padding-lr-lg: 6rem;
-
-    --padding-tb-2xl: 7.5rem;
+    /* 2 col 外側用 */
+    --outer-half: 0px;
 
     /* 計算用 */
     --header-height: 3.75rem;
@@ -66,46 +51,49 @@
     --padding-lr: 1.25rem;
     --before-width: 1.25rem;
 
-    scroll-behavior: smooth;
-    /* scrollbar-gutter: stable; */
-  }
-
-  body {
-    font-family: var(--font-lato);
-    h1 {
-      font-family: var(--font-noto-sans-jp);
-      font-size: 0.9375rem;
-      line-height: 2;
-      letter-spacing: 2.5%;
-    }
-    h2 {
-      color: var(--primary);
-      font-size: 2.625rem;
-      font-weight: 500;
-      line-height: 1.75;
-      letter-spacing: 5%;
-    }
-    h3 {
-      color: var(--primary);
-      font-size: var(--font-size-xs);
-      line-height: 2;
-      letter-spacing: 10%;
-    }
-    &:has(dialog[open]) {
-      overflow: hidden;
-    }
-  }
-
-  @media (min-width: theme(--breakpoint-lg)) {
-    :root {
+    @media (min-width: theme(--breakpoint-md)) {
       --header-height: 6.25rem;
-      --padding-lr-pc: 6rem;
     }
-    body {
-      h1 {
-        font-size: 1.375rem;
-      }
+
+    @media (min-width: theme(--breakpoint-2xl)) {
+      --outer-half: calc(100% - 720px);
     }
+  }
+}
+
+:root {
+  scroll-behavior: smooth;
+  /* scrollbar-gutter: stable; */
+}
+
+body {
+  font-family: var(--font-lato);
+  h1 {
+    font-family: var(--font-noto-sans-jp);
+    font-size: 0.9375rem;
+    line-height: 2;
+    letter-spacing: 2.5%;
+
+    @media (min-width: theme(--breakpoint-md)) {
+      font-size: 1.375rem;
+    }
+  }
+  h2 {
+    color: var(--primary);
+    font-size: 2.625rem;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 5%;
+  }
+  h3 {
+    color: var(--primary);
+    font-size: var(--font-size-xs);
+    line-height: 2;
+    letter-spacing: 10%;
+  }
+  /* hamburger オープン時スクロールロック */
+  &:has(dialog[open]) {
+    overflow: hidden;
   }
 }
 
@@ -119,7 +107,7 @@
     display: contents;
   }
 
-  @media (min-width: theme(--breakpoint-lg)) {
+  @media (min-width: theme(--breakpoint-md)) {
     .sp-only-wrapper,
     .sp-only {
       display: none;

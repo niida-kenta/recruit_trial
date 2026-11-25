@@ -109,7 +109,7 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-lg)) {
+@media (min-width: theme(--breakpoint-md)) {
   .hamburger-menu {
     width: 60rem;
     padding: 7.5rem;
@@ -132,7 +132,6 @@
         margin-right: 0;
         position: absolute;
         /* figmaだとHamburger Menu PCのデザインでtopに10pxついているが、そうするとSPのデザインとハンバーガーの位置に違いが出るのでおかしい */
-        /* top: 0.625rem; */
         top: 0;
         right: 0.75rem;
         /* responsiveで見るとズレないが、scrollbar(15px)込みで見るとずれる */

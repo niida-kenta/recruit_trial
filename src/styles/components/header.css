@@ -45,7 +45,7 @@ header {
   }
 }
 
-@media (min-width: theme(--breakpoint-lg)) {
+@media (min-width: theme(--breakpoint-md)) {
   header {
     background-color: transparent;
     color: var(--white);

@@ -4,7 +4,7 @@
   background-color: var(--dark-gray);
   padding-top: var(--header-height);
   .hero-image {
-    width: 1000px;
+    width: 100vw;
   }
   .alo {
     color: var(--white);
@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-lg)) {
+@media (min-width: theme(--breakpoint-md)) {
   #hero {
     position: relative;
     padding-top: 0;
@@ -77,6 +77,18 @@
       color: var(--white);
       font-size: 0.6875rem;
       font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-2xl)) {
+  #hero {
+    container-type: inline-size;
+    .hero-image {
+      max-width: none;
+      /* 画面の半分 + 画像と重なっている部分 */
+      width: calc(50cqi + 280px);
+      aspect-ratio: 1 / 1;
     }
   }
 }

@@ -2,6 +2,7 @@
 import { siteName } from '@root/project.config';
 import { Image } from 'astro:assets';
 
+import MyCustomImageComponent from '@/components/MyCustomImageComponent.astro';
 import aloPc from '@/images/alo-pc.svg';
 import aloSp from '@/images/alo-sp.svg';
 import kvPc from '@/images/kv-pc.jpg';
@@ -10,19 +11,13 @@ import '@/styles/components/hero.css';
 ---
 
 <div id="hero">
-  <Image
-    alt="mobile hero image"
-    class="hero-image sp-only"
-    sizes="100vw"
-    src={kvSp}
-    widths={[375, 750]}
-  />
-  <Image
-    alt="pc hero image"
-    class="hero-image pc-only"
-    sizes="1000px"
-    src={kvPc}
-    widths={[1000, 2000]}
+  <MyCustomImageComponent
+    alt="hero image"
+    className="hero-image"
+    desktopImgUrl={kvPc}
+    desktopWidth={2000}
+    mobileImgUrl={kvSp}
+    mobileWidth={1000}
   />
   <div class="alo">
     <p class="pc-only site-name">{siteName}</p>

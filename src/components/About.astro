@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 
+import '@/components/MyCustomImageComponent.astro';
+import MyCustomImageComponent from '@/components/MyCustomImageComponent.astro';
 import graphPc from '@/images/graph-pc.svg';
 import graphSp from '@/images/graph-sp.svg';
 import interiorPc from '@/images/interior-pc.jpg';
@@ -47,19 +49,14 @@ import '@/styles/components/about.css';
       <h3>ANIMAL LIBERATION ORCHESTRA</h3>
     </div>
   </div>
-  <Image
+  <MyCustomImageComponent
     alt="interior image"
-    class="interior sp-only"
-    sizes="375px"
-    src={interiorSp}
-    widths={[375, 750]}
-  />
-  <Image
-    alt="interior image"
-    class="interior pc-only"
-    sizes="600px"
-    src={interiorPc}
-    widths={[600, 1200]}
+    breakpoint={480}
+    className="interior"
+    desktopImgUrl={interiorPc}
+    desktopWidth={1200}
+    mobileImgUrl={interiorSp}
+    mobileWidth={750}
   />
   <div class="completions">
     <div class="graph">

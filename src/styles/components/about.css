@@ -1,7 +1,9 @@
 @reference "@/styles/global.css";
 
 #about {
-  --graph-text-offset: max(7.5rem, calc(50vw - 600px)); /* imgと.graphのテキストの左端を同じ変数 */
+  container-type: inline-size;
+  /* imgと.graphのテキストの左端を同じ変数 */
+  --graph-text-offset: min(50cqi - 600px, 7.5rem);
   .about-intro {
     padding: 4rem var(--padding-lr) 4.5rem;
     h2 {
@@ -52,6 +54,9 @@
       }
     }
   }
+  .interior {
+    width: 100%;
+  }
   .completions {
     padding: 3rem 1.25rem 4.5rem;
     display: grid;
@@ -78,7 +83,7 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-lg)) {
+@media (min-width: theme(--breakpoint-md)) {
   #about {
     display: grid;
     grid-template:
@@ -89,8 +94,7 @@
     position: relative;
     .about-intro {
       grid-area: intro;
-      /* padding: 7.5rem 8rem 7.5rem 8.5rem; */
-      padding: var(--padding-tb-lg) var(--padding-lr-lg) var(--padding-tb-lg) var(--padding-lr-lg);
+      padding: 7.5rem 8rem 7.5rem calc(8.5rem + var(--outer-half));
       h2 {
         font-size: 3.75rem;
         margin-bottom: 0.75rem;
@@ -111,19 +115,20 @@
     }
     .text-wrapper--light_gray {
       grid-area: light_gray;
-      padding: 7.5rem 9.25rem 7.5rem 7.5rem;
+      padding: 7.5rem 9.25rem 7.5rem calc(7.5rem + var(--outer-half));
       .lead {
         margin-bottom: 2.5rem;
       }
     }
     .stuck {
       grid-area: stuck;
-      padding: 8.75rem var(--padding-lr-pc) 0;
+      padding: 8.75rem calc(7.5rem + var(--outer-half)) 0 var(--padding-lr-pc);
       img {
         margin-bottom: 2.5rem;
       }
       .stuck-text-wrapper {
         padding-left: 3.75rem;
+        margin-bottom: 4.25rem;
         h2 {
           font-size: 3rem;
           margin-bottom: 0.75rem;
@@ -132,16 +137,10 @@
     }
     .interior {
       grid-area: stuck;
-      /* width: 600px; */
-      /* width: calc(100% - var(--graph-text-offset)); */
-      /* max-width: 600px; */
-      width: 100%;
-      max-width: min(50vw, 600px);
-      /* margin-bottom: -7rem; */
+      max-width: 600px;
       position: absolute;
-      /* left: var(--graph-text-offset); */
-      bottom: 0;
-      /* justify-self: center; */
+      left: var(--graph-text-offset);
+      bottom: -7rem;
     }
     .completions {
       grid-area: completions;
@@ -159,18 +158,5 @@
         }
       }
     }
-  }
-}
-
-@media (min-width: theme(--breakpoint-xl)) {
-  .interior {
-    /* width: 600px; */
-    /* width: calc(100% - var(--graph-text-offset)); */
-    max-width: 600px;
-    margin-bottom: -7rem;
-    position: absolute;
-    left: var(--graph-text-offset);
-    bottom: 0;
-    /* justify-self: center; */
   }
 }

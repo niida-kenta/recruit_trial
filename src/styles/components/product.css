@@ -60,10 +60,10 @@
   }
 }
 
-@media (min-width: theme(--breakpoint-lg)) {
+@media (min-width: theme(--breakpoint-md)) {
   #product {
     .product-intro {
-      padding: 8.5rem 7.5rem 17rem;
+      padding: 8.5rem var(--padding-lr-pc) 17rem;
       h2 {
         font-size: 3.75rem;
         margin-bottom: 0.75rem;
