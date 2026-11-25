@@ -1,6 +1,7 @@
 @reference "@/styles/global.css";
 
 #about {
+  --graph-text-offset: max(7.5rem, calc(50vw - 600px)); /* imgと.graphのテキストの左端を同じ変数 */
   .about-intro {
     padding: 4rem var(--padding-lr) 4.5rem;
     h2 {
@@ -68,6 +69,15 @@
   }
 }
 
+@media (min-width: theme(--breakpoint-sm)) {
+  #about .sp-only {
+    display: none;
+  }
+  #about .pc-only {
+    display: block;
+  }
+}
+
 @media (min-width: theme(--breakpoint-lg)) {
   #about {
     display: grid;
@@ -76,9 +86,11 @@
       'light_gray stuck' auto
       'completions completions' auto
       / minmax(0, 1fr) minmax(0, 1fr);
+    position: relative;
     .about-intro {
       grid-area: intro;
-      padding: 7.5rem 8rem 7.5rem 8.5rem;
+      /* padding: 7.5rem 8rem 7.5rem 8.5rem; */
+      padding: var(--padding-tb-lg) var(--padding-lr-lg) var(--padding-tb-lg) var(--padding-lr-lg);
       h2 {
         font-size: 3.75rem;
         margin-bottom: 0.75rem;
@@ -120,10 +132,16 @@
     }
     .interior {
       grid-area: stuck;
-      width: 600px;
-      justify-self: end;
-      align-self: end;
-      margin-bottom: -7rem;
+      /* width: 600px; */
+      /* width: calc(100% - var(--graph-text-offset)); */
+      /* max-width: 600px; */
+      width: 100%;
+      max-width: min(50vw, 600px);
+      /* margin-bottom: -7rem; */
+      position: absolute;
+      /* left: var(--graph-text-offset); */
+      bottom: 0;
+      /* justify-self: center; */
     }
     .completions {
       grid-area: completions;
@@ -141,5 +159,18 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: theme(--breakpoint-xl)) {
+  .interior {
+    /* width: 600px; */
+    /* width: calc(100% - var(--graph-text-offset)); */
+    max-width: 600px;
+    margin-bottom: -7rem;
+    position: absolute;
+    left: var(--graph-text-offset);
+    bottom: 0;
+    /* justify-self: center; */
   }
 }

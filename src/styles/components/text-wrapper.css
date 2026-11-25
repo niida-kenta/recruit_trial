@@ -1,4 +1,5 @@
 @reference "@/styles/global.css";
+@layer theme, base, components, utilities, app;
 
 @layer components {
   .text-wrapper {

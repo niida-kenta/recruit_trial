@@ -31,20 +31,20 @@
     --dark-gray: #222222;
 
     --design-scale: 1px;
-    /* --font-size-xxs: 10px;
+    --font-size-xxs: 10px;
     --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size-md: 16px;
     --font-size-lg: 18px;
     --font-size-xl: 24px;
-    --font-size-xxl: 32px; */
-    --font-size-xxs: max(10px, calc(var(--design-scale) * 10));
+    --font-size-xxl: 32px;
+    /* --font-size-xxs: max(10px, calc(var(--design-scale) * 10));
     --font-size-xs: max(11px, calc(var(--design-scale) * 12));
     --font-size-sm: max(12px, calc(var(--design-scale) * 14));
     --font-size-md: calc(var(--design-scale) * 16);
     --font-size-lg: calc(var(--design-scale) * 18);
     --font-size-xl: calc(var(--design-scale) * 24);
-    --font-size-xxl: calc(var(--design-scale) * 32);
+    --font-size-xxl: calc(var(--design-scale) * 32); */
 
     @media (min-width: 1024px) {
       --design-scale: calc(clamp(1024px, 100vw, 1920px) / 1440);
@@ -52,6 +52,11 @@
 
     /* layout 共通 */
     --padding-lr-pc: 7.5rem;
+    /* tablet用独自 */
+    --padding-tb-lg: 5rem;
+    --padding-lr-lg: 6rem;
+
+    --padding-tb-2xl: 7.5rem;
 
     /* 計算用 */
     --header-height: 3.75rem;
@@ -94,6 +99,7 @@
   @media (min-width: theme(--breakpoint-lg)) {
     :root {
       --header-height: 6.25rem;
+      --padding-lr-pc: 6rem;
     }
     body {
       h1 {

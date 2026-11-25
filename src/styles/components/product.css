@@ -51,6 +51,15 @@
   }
 }
 
+@media (min-width: theme(--breakpoint-sm)) {
+  .product-card .sp-only {
+    display: none;
+  }
+  .product-card .pc-only {
+    display: block;
+  }
+}
+
 @media (min-width: theme(--breakpoint-lg)) {
   #product {
     .product-intro {
