@@ -4,7 +4,7 @@
   background-color: var(--dark-gray);
   padding-top: var(--header-height);
   .hero-image {
-    width: 100vw;
+    width: 100%;
   }
   .alo {
     color: var(--white);
