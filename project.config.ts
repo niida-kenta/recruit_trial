@@ -7,10 +7,16 @@ export const buildMode = environment.BUILD_MODE;
 export const isDevMode = mode !== 'production';
 
 export const breakPoints = {
-  Tab: 768,
-  Laptop: 1024,
-  Desktop: 1440,
-  Huge: 1920,
+  // Tab: 768,
+  // Laptop: 1024,
+  // Desktop: 1440,
+  // Huge: 1920,
+  sm: 480,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  '2xl': 1440,
+  '3xl': 1920,
 };
 
 export const siteName = `日本ALO音楽研究所`;

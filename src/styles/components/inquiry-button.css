@@ -4,5 +4,5 @@
   border: 1px solid var(--white);
   width: 12.5rem;
   height: 3rem;
-  margin-left: 2rem;
+  margin-left: var(--space-3xl);
 }

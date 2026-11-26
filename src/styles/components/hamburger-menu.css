@@ -112,20 +112,20 @@
 @media (min-width: theme(--breakpoint-md)) {
   .hamburger-menu {
     width: 60rem;
-    padding: 7.5rem;
+    padding: var(--space-12xl);
     &[open] {
       display: grid;
       place-items: center;
     }
     .menu-header {
-      margin-bottom: 2.5rem;
+      margin-bottom: var(--space-5xl);
       .site-name {
         width: 100%;
         font-weight: 300;
         font-size: 1.625rem;
         line-height: 1.5;
         letter-spacing: 10%;
-        padding-bottom: 2.5rem;
+        padding-bottom: var(--space-5xl);
         border-bottom: 1px solid var(--white);
       }
       .close-button {
@@ -155,7 +155,7 @@
         'inquiry-tel nav-link';
       .nav-link {
         grid-area: nav-link;
-        padding: 3rem 6.25rem;
+        padding: var(--space-6xl) var(--space-11xl);
         border-left: 1px solid rgb(from var(--white) r g b / 10%);
         font-size: var(--font-size-lg);
       }
@@ -163,35 +163,35 @@
         grid-area: inquiry-mail;
         height: fit-content;
         border: none;
-        padding: 3rem 6.25rem 0 0;
-        gap: 2rem;
+        padding: var(--space-6xl) var(--space-11xl) 0 0;
+        gap: var(--space-3xl);
         align-items: start;
         .flex-wrapper {
-          gap: 2.25rem;
+          gap: var(--space-4xl);
           img {
             width: 52px;
           }
         }
         .inquiry-button {
           width: 18.25rem;
-          margin-left: calc(52px + 2.25rem); /* img size + gap */
+          margin-left: calc(52px + var(--space-4xl)); /* img size + gap */
         }
       }
       .tel-wrapper {
         grid-area: inquiry-tel;
         height: fit-content;
         border: none;
-        padding: 0 6.25rem 3rem 0;
-        gap: 1.25rem;
+        padding: 0 var(--space-11xl) var(--space-6xl) 0;
+        gap: var(--space-lg);
         align-items: start;
         .flex-wrapper {
-          gap: 2.25rem;
+          gap: var(--space-4xl);
           img {
             width: 52px; /* svgはremではなくpxに統一 */
           }
         }
         .contact-info {
-          margin-left: calc(52px + 2.25rem); /* img size + gap */
+          margin-left: calc(52px + var(--space-4xl)); /* img size + gap */
           .business-hours {
             font-size: 0.8125rem;
             text-align: start;

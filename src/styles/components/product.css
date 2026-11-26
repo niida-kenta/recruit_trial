@@ -63,10 +63,10 @@
 @media (min-width: theme(--breakpoint-md)) {
   #product {
     .product-intro {
-      padding: 8.5rem var(--padding-lr-pc) 17rem;
+      padding: var(--space-13xl) var(--space-12xl) 17rem;
       h2 {
-        font-size: 3.75rem;
-        margin-bottom: 0.75rem;
+        font-size: var(--font-size-6xl);
+        margin-bottom: var(--space-sm);
       }
       h3 {
         &::before {
@@ -76,15 +76,15 @@
       .text-wrapper.text-wrapper--primary {
         .lead {
           font-size: var(--font-size-xl);
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--space-xl);
         }
       }
     }
     .product-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 3.75rem;
-      padding: 0 var(--padding-lr-pc) 9rem;
+      gap: var(--space-8xl);
+      padding: 0 var(--space-12xl) 9rem;
       margin-top: -11.875rem;
     }
   }
