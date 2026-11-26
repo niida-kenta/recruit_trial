@@ -40,8 +40,8 @@
       width: 100%;
       background: rgba(from var(--black) r g b / 50%);
       display: grid;
-      align-content: start;
-      padding-top: calc(var(--header-height) + var(--space-7xl));
+      align-content: center;
+      padding-top: var(--header-height);
       .site-name {
         font-family: var(--font-noto-sans-jp);
         font-weight: 300;
@@ -84,7 +84,6 @@
 @media (min-width: theme(--breakpoint-lg)) {
   #hero {
     .alo {
-      padding-top: calc(var(--header-height) + var(--space-11xl));
       .site-name {
         font-size: 1.625rem;
         margin-bottom: var(--space-5xl);
@@ -111,7 +110,6 @@
 @media (min-width: theme(--breakpoint-xl)) {
   #hero {
     .alo {
-      padding-top: calc(var(--header-height) + var(--space-12xl));
       .site-name {
         margin-bottom: var(--space-7xl);
       }
@@ -141,6 +139,7 @@
       aspect-ratio: 1 / 1;
     }
     .alo {
+      align-content: start;
       padding-top: calc(var(--header-height) + 145.75px);
       .site-name {
         margin-bottom: var(--space-9xl);
