@@ -33,8 +33,13 @@
     padding-top: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    container-type: inline-size;
     .hero-image {
-      max-width: 1000px;
+      max-width: none;
+      /* PC（1440）での画像の幅 1000px と同じ比率 */
+      width: calc(100cqi * 1000 / 1440);
+      height: 100%;
+      object-fit: cover;
     }
     .alo {
       width: 100%;
