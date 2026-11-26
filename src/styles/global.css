@@ -101,6 +101,9 @@ body {
     letter-spacing: 2.5%;
 
     @media (min-width: theme(--breakpoint-md)) {
+      font-size: var(--font-size-md);
+    }
+    @media (min-width: theme(--breakpoint-lg)) {
       font-size: var(--font-size-lg);
     }
     @media (min-width: theme(--breakpoint-2xl)) {

@@ -92,6 +92,8 @@
       'completions completions' auto
       / minmax(0, 1fr) minmax(0, 1fr);
     position: relative;
+    --interior-size: min(50cqi - var(--space-6xl), 600px);
+    --interior-overhang: calc(4rem * 0.8);
     .about-intro {
       grid-area: intro;
       padding: var(--space-6xl) var(--space-8xl) var(--space-9xl) var(--space-9xl);
@@ -134,6 +136,7 @@
     .stuck {
       grid-area: stuck;
       padding: var(--space-11xl) var(--space-8xl) 0 var(--space-8xl);
+      padding-bottom: calc(var(--interior-size) - var(--interior-overhang) + var(--space-5xl));
       img {
         margin-bottom: var(--space-xxl);
       }
@@ -148,13 +151,10 @@
     }
     .interior {
       grid-area: stuck;
-      width: calc(100% - var(--space-6xl));
-      max-width: 600px;
+      width: var(--interior-size);
       position: absolute;
-      /* left: var(--graph-text-offset); */
-      /* bottom: -7rem; */
       right: 0;
-      bottom: calc(-4rem * 0.8);
+      bottom: calc(-1 * var(--interior-overhang));
     }
     .completions {
       grid-area: completions;
@@ -211,6 +211,7 @@
     }
     .stuck {
       padding: var(--space-11xl) var(--space-10xl) 0 var(--space-10xl);
+      padding-bottom: calc(var(--interior-size) - var(--interior-overhang) + var(--space-5xl));
       img {
         margin-bottom: var(--space-3xl);
       }
@@ -262,6 +263,7 @@
     }
     .stuck {
       padding: var(--space-12xl) var(--space-11xl) 0 var(--space-11xl);
+      padding-bottom: calc(var(--interior-size) - var(--interior-overhang) + var(--space-5xl));
       img {
         margin-bottom: var(--space-4xl);
       }
