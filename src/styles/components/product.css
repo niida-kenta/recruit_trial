@@ -63,10 +63,10 @@
 @media (min-width: theme(--breakpoint-md)) {
   #product {
     .product-intro {
-      padding: var(--space-13xl) var(--space-12xl) 17rem;
+      padding: var(--space-11xl) var(--space-8xl) 17rem;
       h2 {
-        font-size: var(--font-size-6xl);
-        margin-bottom: var(--space-sm);
+        font-size: var(--font-size-5xl);
+        margin-bottom: var(--space-xs);
       }
       h3 {
         &::before {
@@ -76,16 +76,60 @@
       .text-wrapper.text-wrapper--primary {
         .lead {
           font-size: var(--font-size-xl);
-          margin-bottom: var(--space-xl);
+          margin-bottom: var(--space-lg);
         }
       }
     }
     .product-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-8xl);
-      padding: 0 var(--space-12xl) 9rem;
+      gap: var(--space-6xl);
+      padding: 0 var(--space-8xl) var(--space-11xl);
       margin-top: -11.875rem;
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  #product {
+    .product-intro {
+      padding: var(--space-11xl) var(--space-10xl) 17rem;
+      .text-wrapper.text-wrapper--primary {
+        .lead {
+          margin-bottom: var(--space-xl);
+        }
+      }
+    }
+    .product-list {
+      gap: var(--space-7xl);
+      padding: 0 var(--space-10xl) var(--space-12xl);
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-xl)) {
+  #product {
+    .product-intro {
+      padding: var(--space-12xl) var(--space-11xl) 17rem;
+      h2 {
+        font-size: var(--font-size-6xl);
+        margin-bottom: var(--space-sm);
+      }
+    }
+    .product-list {
+      gap: var(--space-8xl);
+      padding: 0 var(--space-11xl) var(--space-13xl);
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-2xl)) {
+  #product {
+    .product-intro {
+      padding: var(--space-13xl) var(--space-12xl) 17rem;
+    }
+    .product-list {
+      padding: 0 var(--space-12xl) 9rem;
     }
   }
 }

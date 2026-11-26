@@ -112,20 +112,20 @@
 @media (min-width: theme(--breakpoint-md)) {
   .hamburger-menu {
     width: 60rem;
-    padding: var(--space-12xl);
+    padding: var(--space-6xl) var(--space-8xl) var(--space-10xl);
     &[open] {
       display: grid;
       place-items: center;
     }
     .menu-header {
-      margin-bottom: var(--space-5xl);
+      margin-bottom: var(--space-md);
       .site-name {
         width: 100%;
         font-weight: 300;
-        font-size: 1.625rem;
+        font-size: var(--font-size-lg);
         line-height: 1.5;
         letter-spacing: 10%;
-        padding-bottom: var(--space-5xl);
+        padding-bottom: var(--space-md);
         border-bottom: 1px solid var(--white);
       }
       .close-button {
@@ -155,46 +155,160 @@
         'inquiry-tel nav-link';
       .nav-link {
         grid-area: nav-link;
-        padding: var(--space-6xl) var(--space-11xl);
+        padding: var(--space-md) var(--space-4xl);
         border-left: 1px solid rgb(from var(--white) r g b / 10%);
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
       }
       .mail-wrapper {
         grid-area: inquiry-mail;
         height: fit-content;
         border: none;
-        padding: var(--space-6xl) var(--space-11xl) 0 0;
-        gap: var(--space-3xl);
+        padding: var(--space-3xl) var(--space-4xl) 0 0;
+        gap: var(--space-xl);
         align-items: start;
         .flex-wrapper {
-          gap: var(--space-4xl);
+          gap: var(--space-xl);
           img {
             width: 52px;
           }
         }
         .inquiry-button {
           width: 18.25rem;
-          margin-left: calc(52px + var(--space-4xl)); /* img size + gap */
+          margin-left: calc(52px + var(--space-xl)); /* img size + gap */
         }
       }
       .tel-wrapper {
         grid-area: inquiry-tel;
         height: fit-content;
         border: none;
-        padding: 0 var(--space-11xl) var(--space-6xl) 0;
-        gap: var(--space-lg);
+        padding: 0 var(--space-4xl) var(--space-md) 0;
+        gap: var(--space-md);
         align-items: start;
         .flex-wrapper {
-          gap: var(--space-4xl);
+          gap: var(--space-xl);
           img {
             width: 52px; /* svgはremではなくpxに統一 */
           }
         }
         .contact-info {
-          margin-left: calc(52px + var(--space-4xl)); /* img size + gap */
+          margin-left: calc(52px + var(--space-xl)); /* img size + gap */
+          .business-hours {
+            font-size: var(--font-size-xs);
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  .hamburger-menu {
+    padding: var(--space-10xl) var(--space-10xl) var(--space-11xl);
+    .menu-header {
+      margin-bottom: var(--space-xl);
+      .site-name {
+        font-size: var(--font-size-xl);
+        padding-bottom: var(--space-xl);
+      }
+    }
+    .menu-content {
+      .nav-link {
+        padding: var(--space-xxl) var(--space-8xl);
+        font-size: var(--font-size-lg);
+      }
+      .mail-wrapper {
+        padding: var(--space-4xl) var(--space-8xl) 0 0;
+        gap: var(--space-xxl);
+        .flex-wrapper {
+          gap: var(--space-xxl);
+        }
+        .inquiry-button {
+          margin-left: calc(52px + var(--space-xxl));
+        }
+      }
+      .tel-wrapper {
+        padding: 0 var(--space-8xl) var(--space-xxl) 0;
+        .flex-wrapper {
+          gap: var(--space-xxl);
+        }
+        .contact-info {
+          margin-left: calc(52px + var(--space-xxl));
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-xl)) {
+  .hamburger-menu {
+    padding: var(--space-11xl) var(--space-11xl) var(--space-12xl);
+    .menu-header {
+      margin-bottom: var(--space-3xl);
+      .site-name {
+        padding-bottom: var(--space-3xl);
+      }
+    }
+    .menu-content {
+      .nav-link {
+        padding: var(--space-5xl) var(--space-10xl);
+      }
+      .mail-wrapper {
+        padding: var(--space-5xl) var(--space-10xl) 0 0;
+        gap: var(--space-3xl);
+        .flex-wrapper {
+          gap: var(--space-3xl);
+        }
+        .inquiry-button {
+          margin-left: calc(52px + var(--space-3xl));
+        }
+      }
+      .tel-wrapper {
+        padding: 0 var(--space-10xl) var(--space-5xl) 0;
+        gap: var(--space-lg);
+        .flex-wrapper {
+          gap: var(--space-3xl);
+        }
+        .contact-info {
+          margin-left: calc(52px + var(--space-3xl));
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-2xl)) {
+  .hamburger-menu {
+    padding: var(--space-12xl);
+    .menu-header {
+      margin-bottom: var(--space-5xl);
+      .site-name {
+        font-size: 1.625rem;
+        padding-bottom: var(--space-5xl);
+      }
+    }
+    .menu-content {
+      .nav-link {
+        padding: var(--space-6xl) var(--space-11xl);
+      }
+      .mail-wrapper {
+        padding: var(--space-6xl) var(--space-11xl) 0 0;
+        .flex-wrapper {
+          gap: var(--space-4xl);
+        }
+        .inquiry-button {
+          margin-left: calc(52px + var(--space-4xl));
+        }
+      }
+      .tel-wrapper {
+        padding: 0 var(--space-11xl) var(--space-6xl) 0;
+        .flex-wrapper {
+          gap: var(--space-4xl);
+        }
+        .contact-info {
+          margin-left: calc(52px + var(--space-4xl));
           .business-hours {
             font-size: 0.8125rem;
-            text-align: start;
           }
         }
       }

@@ -75,35 +75,93 @@ footer {
   footer {
     .inquiry {
       gap: 0;
-      padding: var(--space-8xl) var(--space-12xl);
+      padding: var(--space-8xl) var(--space-8xl) var(--space-6xl);
       .inquiry-text {
         border: none;
         padding: 0;
-        margin-bottom: var(--space-xxl);
+        margin-bottom: var(--space-sm);
       }
       .tel {
-        gap: var(--space-xl);
-        margin-bottom: 5rem;
+        gap: var(--space-lg);
+        margin-bottom: var(--space-7xl);
         img {
           width: auto;
         }
         .phone-number {
-          font-size: var(--font-size-3xl);
+          font-size: var(--font-size-xxl);
         }
         .business-hours {
-          font-size: 0.8125rem;
+          font-size: var(--font-size-xs);
         }
       }
     }
     .navigation {
       display: flex;
       justify-content: space-between;
-      padding: var(--space-7xl) var(--space-12xl);
+      padding: var(--space-7xl) var(--space-8xl) var(--space-6xl);
       ul {
         justify-content: start;
         padding: 0;
         border: none;
       }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  footer {
+    .inquiry {
+      padding: var(--space-8xl) var(--space-10xl) var(--space-7xl);
+      .inquiry-text {
+        margin-bottom: var(--space-md);
+      }
+      .tel {
+        margin-bottom: var(--space-9xl);
+      }
+    }
+    .navigation {
+      padding: var(--space-7xl) var(--space-10xl) var(--space-6xl);
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-xl)) {
+  footer {
+    .inquiry {
+      padding: var(--space-8xl) var(--space-11xl);
+      .inquiry-text {
+        margin-bottom: var(--space-xl);
+      }
+      .tel {
+        gap: var(--space-xl);
+        margin-bottom: var(--space-10xl);
+        .phone-number {
+          font-size: var(--font-size-3xl);
+        }
+      }
+    }
+    .navigation {
+      padding: var(--space-7xl) var(--space-11xl);
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-2xl)) {
+  footer {
+    .inquiry {
+      padding: var(--space-8xl) var(--space-12xl);
+      .inquiry-text {
+        margin-bottom: var(--space-xxl);
+      }
+      .tel {
+        margin-bottom: 5rem;
+        .business-hours {
+          font-size: 0.8125rem;
+        }
+      }
+    }
+    .navigation {
+      padding: var(--space-7xl) var(--space-12xl);
     }
   }
 }

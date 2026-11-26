@@ -50,12 +50,12 @@ header {
     background-color: transparent;
     color: var(--white);
     height: 6.25rem;
-    padding: 0 var(--space-sm) 0 var(--space-4xl);
+    padding: 0 var(--space-xxs) 0 var(--space-xl);
     .header-actions {
       .tel {
         display: flex;
         align-items: center;
-        gap: var(--space-xs);
+        gap: var(--space-xxs);
         .tel-text {
           font-size: 0.8125rem;
         }
@@ -71,10 +71,40 @@ header {
         width: 6.25rem;
         padding: 0;
         .menu-text {
-          font-size: 0.6875rem;
+          font-size: var(--font-size-xxs);
         }
         .menu-lines {
           width: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  header {
+    padding: 0 var(--space-xs) 0 var(--space-xxl);
+  }
+}
+
+@media (min-width: theme(--breakpoint-xl)) {
+  header {
+    padding: 0 var(--space-sm) 0 var(--space-3xl);
+    .header-actions {
+      .tel {
+        gap: var(--space-xs);
+      }
+    }
+  }
+}
+
+@media (min-width: theme(--breakpoint-2xl)) {
+  header {
+    padding: 0 var(--space-sm) 0 var(--space-4xl);
+    .header-actions {
+      .menu {
+        .menu-text {
+          font-size: 0.6875rem;
         }
       }
     }
